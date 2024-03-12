@@ -8,20 +8,22 @@ export default function Bebidas() {
     <div className="flex min-h-screen flex-col items-center justify-between">
       <Header />
 
-      <div className="flex flex-row gap-4 justify-center items-center max-w-5xl">
-        <div>
-          <h1 className="mb-4">Sobre a budega 92</h1>
-          <h2 className="font-bold text-4xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-            ducimus nihil eligendi nisi eos,
-          </h2>
+      <div className="grid grid-cols-2  md:grid-cols-3  gap-8 pb-4 pt-4">
+        <div className="bg-red-400 h-[350px] w-[350px] text-white">Cerveja</div>
+        <div className="bg-blue-300 h-[350px] w-[350px]  text-white">Vinho</div>
+        <div className="bg-yellow-400  h-[350px] w-[350px]   text-white">
+          Destilados
         </div>
-        <div className="bg-red-400 w-96 h-96">
-          <p>teste</p>
+        <div className="bg-indigo-500 h-[350px] w-[350px]   text-white">
+          Não Alcoólicos
+        </div>
+        <div className="bg-teal-400 h-[350px] w-[350px]   text-white">
+          Snacks
+        </div>
+        <div className="bg-fuchsia-400  h-[350px] w-[350px] text-white">
+          Outros
         </div>
       </div>
-
-      {/* Restante do seu código permanece inalterado */}
 
       <Footer />
     </div>

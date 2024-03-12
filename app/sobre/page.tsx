@@ -8,7 +8,7 @@ export default function Sobre() {
     <div className="flex min-h-screen flex-col items-center justify-between">
       <Header />
 
-      <div className="flex flex-col lg:flex-row lg:h-[800px] lg:p-0 p-4 lg:w-full gap-5 justify-center items-center">
+      <div className="flex flex-col lg:flex-row lg:h-[800px] lg:max-w-5xl lg:p-0 p-4  gap-5 justify-center items-center">
         <div className="flex flex-col justify-center items-center  lg:flex-row lg:gap-14 lg:max-w-5xl w-full">
           <div className=" flex-row justify-center  items-center">
             <h1 className="text-lg lg:text-lg lg:justify-start flex items-center justify-center mb-4">
@@ -27,7 +27,7 @@ export default function Sobre() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:p-0 p-4 gap-8 mb-20 lg:mt-16 lg:max-w-5xl">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:p-0 p-4 gap-8 mb-20 mt-16 lg:max-w-5xl">
         <div className="bg-red-300 lg:h-[350px]  h-[200px]  mb-8 lg:mb-0">
           01
         </div>
