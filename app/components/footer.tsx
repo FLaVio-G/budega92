@@ -39,7 +39,7 @@ export default function Footer() {
       </div>
       <div className="w-full flex items-center pr-10 pl-10 justify-between row-auto bg-slate-500">
         <p>Budega 92</p>
-        <p>Desevolvido por Flávio Viana</p>
+        <p>Desenvolvido por Flávio Viana</p>
         <p className="text-white">Beba com moderação</p>
       </div>
     </footer>
