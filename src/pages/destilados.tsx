@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import { X } from "@phosphor-icons/react";
 import Image from "next/image";
 
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import vodkaRedImage from "../../public/images/vodka-red.jpg";
-import Footer from "../components/footer";
-import Header from "../components/header";
 
 export default function Spirits() {
   const [showOverlay, setShowOverlay] = useState(false);

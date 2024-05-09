@@ -2,13 +2,13 @@
 import React from "react";
 import Image from "next/image";
 
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import cerveja1 from "../../public/images/cervejas.jpg";
 import garrafa1 from "../../public/images/garrafa-agua.jpg";
 import Jambu1 from "../../public/images/jambu.jpg";
 import snake1 from "../../public/images/snakes.jpg";
 import vinho1 from "../../public/images/vinho.jpg";
-import Footer from "../components/footer";
-import Header from "../components/header";
 
 import "keen-slider/keen-slider.min.css";
 
