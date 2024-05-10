@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 export default function Footer() {
   return (
-    <footer className="w-full bg-slate-600 text-white">
+    <footer className="w-full  bg-slate-600 text-white">
       <div className="flex flex-col items-center  justify-center p-4">
         <div className="flex justify-center max-w-5xl items-center p-6   space-x-4">
           <div className="p-4">

@@ -1,8 +1,11 @@
 import { gql, useQuery } from "@apollo/client";
-import { useState } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const GET_ALL_PRODUCT = gql`
   query AllProducts {
@@ -29,6 +32,42 @@ export default function Home() {
   const { data } = useQuery(GET_ALL_PRODUCT);
   console.log(data);
 
+  const [sliderRef] = useKeenSlider<HTMLDivElement>(
+    {
+      loop: true,
+    },
+    [
+      (slider) => {
+        let timeout: ReturnType<typeof setTimeout>;
+        let mouseOver = false;
+        function clearNextTimeout() {
+          clearTimeout(timeout);
+        }
+        function nextTimeout() {
+          clearTimeout(timeout);
+          if (mouseOver) return;
+          timeout = setTimeout(() => {
+            slider.next();
+          }, 2000);
+        }
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => {
+            mouseOver = true;
+            clearNextTimeout();
+          });
+          slider.container.addEventListener("mouseout", () => {
+            mouseOver = false;
+            nextTimeout();
+          });
+          nextTimeout();
+        });
+        slider.on("dragStarted", clearNextTimeout);
+        slider.on("animationEnded", nextTimeout);
+        slider.on("updated", nextTimeout);
+      },
+    ]
+  );
+
   const handleYesClick = () => {
     setIsModalOpen(false);
   };
@@ -48,11 +87,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <div className="w-full max-w-[1120px] flex flex-col mx-auto pb-12 px-4">
-        <Header />
-      </div>
+      <Header />
 
-      {isModalOpen && !showSecondaryMessage && (
+      {/* {isModalOpen && !showSecondaryMessage && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-8 rounded-lg text-center">
             <h2 className="text-xl mb-4 font-semibold">
@@ -77,7 +114,7 @@ export default function Home() {
       )}
 
       {showSecondaryMessage && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="fixed  top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-8 rounded-lg text-center">
             <h2 className="text-xl mb-4 font-semibold">
               Você precisa ter 18 anos ou mais para consumir bebidas alcoólicas.
@@ -95,46 +132,47 @@ export default function Home() {
             </button>
           </div>
         </div>
-      )}
+      )} */}
 
-      <div className="flex flex-col">
-        <h2 className="text-xl justify-center text-center mb-5 font-semibold">
-          O que eu posso fazer no site da budega 92?
-        </h2>
-
-        <div className="mb-32 pb-10 grid mx-auto   lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
-          <div className="group rounded-lg border mr-10 border-gray-300 p-4 hover:border-gray-300 hover:bg-gray-100 text-center">
-            <h2 className="inline-block text-lg font-sans">Produtos</h2>
-            <span>
-              <p className="text-sm opacity-50">
-                Aqui você pode encontrar todos os produtos vendidos na budega 92
-              </p>
-            </span>
+      <div className="mt-10 mb-10">
+        <div
+          ref={sliderRef}
+          className="keen-slider flex  justify-center mx-auto w-full mt-10 mb-10 border- max-w-6xl "
+        >
+          <div className="keen-slider__slide number-slide1 w-[450px] h-[600px] bg-blue-500">
+            1
           </div>
-
-          <div className="group rounded-lg mr-10 border border-gray-300 p-4 hover:border-gray-300 hover:bg-gray-100 text-center">
-            <h2 className="inline-block text-lg font-sans">Histórias</h2>
-            <span>
-              <p className="text-base opacity-50">
-                Aqui você irá mergulhar nesse mundo, nosso fundador irá contar a
-                você tudo sobre as melhores bebidas da região!
-              </p>
-            </span>
+          <div className="keen-slider__slide number-slide1 w-[450px]  h-[600px] bg-blue-700">
+            1
           </div>
-
-          <div className="group rounded-lg border border-gray-300 p-4 hover:border-gray-300 hover:bg-gray-100 text-center">
-            <h2 className="inline-block text-lg font-sans">
-              Contéudos exclusivos
-            </h2>
-            <span>
-              <p className="text-base opacity-50">
-                Acompanhe nossa página e receba as novidades antes de todo mundo
-              </p>
-            </span>
+          <div className="keen-slider__slide number-slide1 w-[450px] h-[600px] bg-blue-900">
+            1
           </div>
         </div>
       </div>
       <Footer />
     </>
   );
+  function Arrow({
+    direction,
+    onClick,
+    disabled,
+  }: {
+    direction: "left" | "right";
+    onClick: () => void;
+    disabled: boolean;
+  }) {
+    const Icon = direction === "left" ? FaChevronLeft : FaChevronRight;
+    return (
+      <button
+        className={`arrow arrow--${direction} ${
+          disabled ? "arrow--disabled" : ""
+        }`}
+        onClick={onClick}
+        disabled={disabled}
+      >
+        <Icon />
+      </button>
+    );
+  }
 }
