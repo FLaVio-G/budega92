@@ -12,6 +12,7 @@ import vinho1 from "../../public/images/vinho.jpg";
 
 import "keen-slider/keen-slider.min.css";
 
+
 export default function Bebidas() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between">

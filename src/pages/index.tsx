@@ -7,30 +7,10 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const GET_ALL_PRODUCT = gql`
-  query AllProducts {
-    products {
-      createdAt
-      description
-      id
-      name
-      price
-      publishedAt
-      slug
-      typeDrink
-      updatedAt
-      image {
-        url
-      }
-    }
-  }
-`;
-
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [showSecondaryMessage, setShowSecondaryMessage] = useState(false);
-  const { data } = useQuery(GET_ALL_PRODUCT);
-  console.log(data);
+
 
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
