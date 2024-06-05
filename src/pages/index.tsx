@@ -6,59 +6,17 @@ import Footer from "@/components/Footer";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Carousel } from "@/components/ui/carousel";
+
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-  const [showSecondaryMessage, setShowSecondaryMessage] = useState(false);
-
-
-  const [sliderRef] = useKeenSlider<HTMLDivElement>(
-    {
-      loop: true,
-    },
-    [
-      (slider) => {
-        let timeout: ReturnType<typeof setTimeout>;
-        let mouseOver = false;
-        function clearNextTimeout() {
-          clearTimeout(timeout);
-        }
-        function nextTimeout() {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => {
-            slider.next();
-          }, 2000);
-        }
-        slider.on("created", () => {
-          slider.container.addEventListener("mouseover", () => {
-            mouseOver = true;
-            clearNextTimeout();
-          });
-          slider.container.addEventListener("mouseout", () => {
-            mouseOver = false;
-            nextTimeout();
-          });
-          nextTimeout();
-        });
-        slider.on("dragStarted", clearNextTimeout);
-        slider.on("animationEnded", nextTimeout);
-        slider.on("updated", nextTimeout);
-      },
-    ]
-  );
-
-  const handleYesClick = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleNoClick = () => {
-    setShowSecondaryMessage(true);
-  };
-
-  const handleBackClick = () => {
-    setShowSecondaryMessage(false);
-  };
   return (
     <>
       <Head>
@@ -68,91 +26,29 @@ export default function Home() {
       </Head>
 
       <Header />
-
-      {/* {isModalOpen && !showSecondaryMessage && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-8 rounded-lg text-center">
-            <h2 className="text-xl mb-4 font-semibold">
-              Você tem mais de 18 anos?
-            </h2>
-            <div className="flex justify-center">
-              <button
-                className="bg-blue-500 text-white px-4 py-2 mr-4 rounded"
-                onClick={handleYesClick}
-              >
-                Sim
-              </button>
-              <button
-                className="bg-red-500 text-white px-4 py-2 rounded"
-                onClick={handleNoClick}
-              >
-                Não
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {showSecondaryMessage && (
-        <div className="fixed  top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-8 rounded-lg text-center">
-            <h2 className="text-xl mb-4 font-semibold">
-              Você precisa ter 18 anos ou mais para consumir bebidas alcoólicas.
-            </h2>
-            <p className="text-base mb-4">
-              Se você tem alguma dúvida ou deseja mais informações, entre em
-              contato conosco:{" "}
-              <a href="mailto:contato@budega92.com">contato@budega92.com</a>
-            </p>
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-              onClick={handleBackClick}
-            >
-              Voltar
-            </button>
-          </div>
-        </div>
-      )} */}
-
-      <div className="mt-10 mb-10">
-        <div
-          ref={sliderRef}
-          className="keen-slider flex  justify-center mx-auto w-full mt-10 mb-10 border- max-w-6xl "
-        >
-          <div className="keen-slider__slide number-slide1 w-[450px] h-[600px] bg-blue-500">
-            1
-          </div>
-          <div className="keen-slider__slide number-slide1 w-[450px]  h-[600px] bg-blue-700">
-            1
-          </div>
-          <div className="keen-slider__slide number-slide1 w-[450px] h-[600px] bg-blue-900">
-            1
-          </div>
-        </div>
-      </div>
-      <Footer />
+      <main className="flex w-full">
+        <Carousel className="flex w-full items-center justify-center  ">
+          <CarouselContent>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <CarouselItem className=" " key={index}>
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                      <span className="text-4xl font-semibold">
+                        {index + 1}
+                      </span>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </main>
+      {/* 
+      <Footer /> */}
     </>
   );
-  function Arrow({
-    direction,
-    onClick,
-    disabled,
-  }: {
-    direction: "left" | "right";
-    onClick: () => void;
-    disabled: boolean;
-  }) {
-    const Icon = direction === "left" ? FaChevronLeft : FaChevronRight;
-    return (
-      <button
-        className={`arrow arrow--${direction} ${
-          disabled ? "arrow--disabled" : ""
-        }`}
-        onClick={onClick}
-        disabled={disabled}
-      >
-        <Icon />
-      </button>
-    );
-  }
 }

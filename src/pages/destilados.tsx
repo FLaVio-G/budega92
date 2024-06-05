@@ -57,7 +57,7 @@ export default function Destilados() {
     <div className="flex min-h-screen flex-col items-center justify-between">
       <Header />
 
-      <div className="grid grid-cols-4 gap-16">
+      <div className="grid grid-cols-4 gap-8 items-center justify-center ">
         {data?.products.map((product) => (
           <CardProduct
             key={product.id}
@@ -71,7 +71,7 @@ export default function Destilados() {
         ))}
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
