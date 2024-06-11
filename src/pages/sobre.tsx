@@ -5,8 +5,9 @@ import Header from "../components/Header";
 
 export default function Sobre() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between">
+    <div className="flex mx-auto max-w-7xl flex-col items-center justify-between">
       <Header />
+      <div className="bg-red-500 w-full">teste</div>
 
       <div className="flex flex-col lg:flex-row lg:h-[800px] lg:max-w-5xl lg:p-0 p-4  gap-5 justify-center items-center">
         <div className="flex flex-col justify-center items-center  lg:flex-row lg:gap-14 lg:max-w-5xl w-full">

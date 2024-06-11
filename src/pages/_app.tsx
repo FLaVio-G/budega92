@@ -20,7 +20,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
       <main className={`${arimo.variable} ${inter.variable} font-sans`}>
-        <Component {...pageProps} />
+        <div className="min-h-screen">
+          <Component {...pageProps} />
+        </div>
       </main>
     </ApolloProvider>
   );

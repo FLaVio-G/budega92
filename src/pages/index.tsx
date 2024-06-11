@@ -6,15 +6,6 @@ import Footer from "@/components/Footer";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Carousel } from "@/components/ui/carousel";
-
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 export default function Home() {
   return (
@@ -26,29 +17,8 @@ export default function Home() {
       </Head>
 
       <Header />
-      <main className="flex w-full">
-        <Carousel className="flex w-full items-center justify-center  ">
-          <CarouselContent>
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem className=" " key={index}>
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <span className="text-4xl font-semibold">
-                        {index + 1}
-                      </span>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </main>
-      {/* 
-      <Footer /> */}
+      <h1 className="text-3xl bg-red-400 font-bold underline">Hello world!</h1>
+      <main className="flex w-full"></main>
     </>
   );
 }

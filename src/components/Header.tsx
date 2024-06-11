@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import Link from "next/link";
-import DropMenu from "./DropMenu";
 
 interface NavLinkProps {
   href: string;
@@ -27,9 +26,6 @@ export default function Header() {
         <NavLink href="/mapa">Mapa</NavLink>
         <NavLink href="/sobre">Sobre</NavLink>
         <NavLink href="/">Em breve</NavLink>
-      </div>
-      <div className="lg:hidden">
-        <DropMenu />
       </div>
     </header>
   );
