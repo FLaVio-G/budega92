@@ -57,7 +57,7 @@ export default function Destilados() {
     <div className="flex mx-auto max-w-7xl flex-col items-center justify-between">
       <Header />
 
-      <div className="grid grid-cols-4 gap-8 bg-gray-800 rounded-lg p-8 items-center justify-center ">
+      <div className="grid grid-cols-4 gap-8 bg-gray-100 text-gray-800 rounded-lg p-8 items-center justify-center ">
         {data?.products.map((product) => (
           <CardProduct
             key={product.id}

@@ -35,7 +35,7 @@ export function CardProduct({
         className="flex flex-col  p-5  w-[200px] cursor-pointer rounded-lg transition-transform transform-gpu hover:scale-110 hover:shadow-lg"
         onClick={handleClick}
       >
-        <div className="h-28 w-full flex items-center justify-center rounded-lg text-white relative">
+        <div className="h-28 w-full flex items-center justify-center rounded-lg text-gray-800 relative">
           <Image
             className="flex items-center justify-center"
             src={urlImage}
@@ -44,16 +44,16 @@ export function CardProduct({
             alt={`${name} image`}
           />
         </div>
-        <h2 className=" pt-14 text-gray-100">{name}</h2>
-        <p className="pt-5 text-gray-100  font-bold">R$ {price}</p>
+        <h2 className=" pt-14 text-gray-800">{name}</h2>
+        <p className="pt-5 text-gray-800  font-bold">R$ {price}</p>
       </div>
 
       {showOverlay && (
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-50">
           <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div className="flex justify-center items-center  h-[600px] w-[900px] bg-gray-800 rounded-lg relative">
+          <div className="flex justify-center items-center  h-[600px] w-[900px] bg-gray-100 rounded-lg relative">
             <div className="flex flex-row gap-16 ">
-              <div className="relative flex justify-center items-center  text-white ml-5">
+              <div className="relative flex justify-center items-center  text-gray-800 ml-5">
                 <Image
                   src={urlImage}
                   alt={`${name} image`}
