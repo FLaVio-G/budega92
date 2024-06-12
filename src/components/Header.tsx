@@ -20,51 +20,19 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
 const items: MenuProps["items"] = [
   {
     key: "1",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.antgroup.com"
-      >
-        Bebidas
-      </a>
-    ),
+    label: <a href="/bebidas">Bebidas</a>,
   },
   {
     key: "2",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.aliyun.com"
-      >
-        Mapa
-      </a>
-    ),
+    label: <a href="/mapa">Mapa</a>,
   },
   {
     key: "3",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.luohanacademy.com"
-      >
-        Sobre
-      </a>
-    ),
+    label: <a href="/sobre">Sobre</a>,
   },
   {
     key: "4",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.luohanacademy.com"
-      >
-        Em breve
-      </a>
-    ),
+    label: <a href="/">Em breve</a>,
   },
 ];
 
