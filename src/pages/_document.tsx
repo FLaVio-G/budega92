@@ -10,7 +10,7 @@ export default function Document() {
           content="width=device-width, initial-scale=1.0, user-scalable=no"
         />
       </Head>
-      <body className="bg-gray-900">
+      <body className="bg-white">
         <Main />
         <NextScript />
       </body>

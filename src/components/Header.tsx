@@ -8,7 +8,7 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
   <Link
-    className="text-white text-xl transition duration-300 hover:border-b-2 hover:border-red-600"
+    className="text-gray-800 text-xl transition duration-300 hover:border-b-2 hover:border-red-600"
     href={href}
   >
     {children}
