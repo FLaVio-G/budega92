@@ -1,82 +1,76 @@
 "use client";
 import React from "react";
 import { CiInstagram } from "react-icons/ci";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 export default function Footer() {
   return (
-    <footer className="w-full text-white">
-      <div className="flex flex-col items-center  justify-center p-4">
-        <div className="flex justify-center max-w-5xl items-center p-6 space-x-4">
-          <div className="max-w-xs p-4">
-            <h2 className="  flex row text-black whitespace-no-wrap justify-start font-semibold ">
-              Sobre a Budega 92
-            </h2>
-            <p className="mt-2 text-black">
-              O Bar Budega 92 é um destino exclusivo para apreciadores de
-              bebidas, oferecendo uma experiência única centrada em uma
-              variedade exuberante de coquetéis, destilados e cervejas
-              artesanais.
-            </p>
-          </div>
-          <div className="flex flex-col">
-            <h2 className="  flex row text-black whitespace-no-wrap justify-start font-semibold ">
-              Social
-            </h2>
-            <Link
-              className="text-black mt-2 gap-1 flex row items-center"
-              href="Instagram"
-            >
-              <CiInstagram size="20" />
-              <p>Instagram</p>
-            </Link>
-            <Link
-              className="text-black mt-1 gap-1  flex row items-center"
-              href="IWhatsapp"
-            >
-              <FaWhatsapp size="20" />
-              <p>Whatsapp</p>
-            </Link>
+    <footer className="w-full text-slate-100">
+      <div className="flex items-center  justify-center p-4 ">
+        <div className="flex flex-col lg:space-y-0 space-y-4  lg:mt-0   items-center  lg:flex-row justify-center max-w-5xl lg:items-start p-6 space-x-4">
+          <div className="max-w-xs mx-auto bg-gray-800 rounded-xl shadow-md overflow-hidden md:max-w-sm">
+            <div className="md:flex">
+              <div className="md:shrink-0"></div>
+              <div className="p-8">
+                <div className="uppercase tracking-wide text-sm text-slate-100 font-semibold">
+                  Sobre a Budega 92
+                </div>
+
+                <p className="mt-2 text-slate-100">
+                  O Bar Budega 92 é um destino exclusivo para apreciadores de
+                  bebidas, oferecendo uma experiência única centrada em uma
+                  variedade exuberante de coquetéis, destilados e cervejas
+                  artesanais.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col">
-            <h2 className="  flex row text-black whitespace-no-wrap justify-start font-semibold ">
-              Social
-            </h2>
-            <Link
-              className="text-black mt-2 gap-1 flex row items-center"
-              href="Instagram"
-            >
-              <CiInstagram size="20" />
-              <p>Instagram</p>
-            </Link>
-            <Link
-              className="text-black mt-1 gap-1  flex row items-center"
-              href="IWhatsapp"
-            >
-              <FaWhatsapp size="20" />
-              <p>Whatsapp</p>
-            </Link>
+          <div className="max-w-md mx-auto bg-gray-800 rounded-xl shadow-md  md:max-w-sm overflow-hidden">
+            <div className="md:flex">
+              <div className="md:shrink-0"></div>
+              <div className="p-8">
+                <div className="uppercase tracking-wide text-sm text-slate-100  font-semibold">
+                  Funcionalidades
+                </div>
+
+                <p className="mt-2 text-slate-100">Bebidas</p>
+                <p className="mt-2 text-slate-100">Mapa</p>
+                <p className="mt-2 text-slate-100">Sobre</p>
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col">
-            <h2 className="  flex row text-black whitespace-no-wrap justify-start font-semibold ">
-              Social
-            </h2>
-            <Link
-              className="text-black mt-2 gap-1 flex row items-center"
-              href="Instagram"
-            >
-              <CiInstagram size="20" />
-              <p>Instagram</p>
-            </Link>
-            <Link
-              className="text-black mt-1 gap-1  flex row items-center"
-              href="IWhatsapp"
-            >
-              <FaWhatsapp size="20" />
-              <p>Whatsapp</p>
-            </Link>
+          <div className="max-w-md mx-auto bg-gray-800 rounded-xl shadow-md  md:max-w-sm overflow-hidden">
+            <div className="md:flex">
+              <div className="md:shrink-0"></div>
+              <div className="p-8">
+                <div className="uppercase tracking-wide text-sm text-slate-100  font-semibold">
+                  Social
+                </div>
+                <Link
+                  className="text-slate-100 mt-2 gap-1 flex row items-center"
+                  href="Instagram"
+                >
+                  <CiInstagram size="20" />
+                  <p>Instagram</p>
+                </Link>
+                <Link
+                  className="text-slate-100 mt-1 gap-1  flex row items-center"
+                  href="IWhatsapp"
+                >
+                  <FaWhatsapp size="20" />
+                  <p>Whatsapp</p>
+                </Link>
+                <Link
+                  className="text-slate-100 mt-1 gap-1  flex row items-center"
+                  href="IWhatsapp"
+                >
+                  <FaYoutube size="20" />
+                  <p>Youtube</p>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

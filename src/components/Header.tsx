@@ -8,7 +8,7 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
   <Link
-    className="text-black text-xl transition duration-300 hover:border-b-2 hover:border-black"
+    className="text-white text-xl transition duration-300 hover:border-b-2 hover:border-red-600"
     href={href}
   >
     {children}
@@ -21,7 +21,7 @@ export default function Header() {
       <div className="flex">
         <NavLink href="/">Budega 92</NavLink>
       </div>
-      <div className="hidden lg:flex space-x-8">
+      <div className="hidden   lg:flex space-x-8">
         <NavLink href="/bebidas">Bebidas</NavLink>
         <NavLink href="/mapa">Mapa</NavLink>
         <NavLink href="/sobre">Sobre</NavLink>

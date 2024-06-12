@@ -14,13 +14,13 @@ import "keen-slider/keen-slider.min.css";
 
 export default function Bebidas() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between">
+    <div className="flex mx-auto max-w-7xl flex-col items-center justify-between">
       <Header />
 
-      <div className="grid grid-cols-2  md:grid-cols-3  gap-8 pb-4 pt-4">
+      <div className="grid grid-cols-2 bg-gray-800 p-8 rounded-lg  md:grid-cols-3  gap-8">
         <a href="/destilados">
           <div>
-            <div className="h-[350px] w-[350px] text-white">
+            <div className="h-[350px] w-[350px] rounded-lg text-white">
               <Image src={Jambu1} alt="Picture of the author" />
             </div>
             <p className="flex font-semibold text-gray-500 justify-center">
@@ -29,7 +29,7 @@ export default function Bebidas() {
           </div>
         </a>
 
-        <a href="/destilados">
+        <a className="rounded-lg" href="/destilados">
           <div>
             <div className="h-[350px] w-[350px] text-white">
               <Image src={vinho1} alt="Picture of the author" />
@@ -73,7 +73,7 @@ export default function Bebidas() {
         </a>
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
