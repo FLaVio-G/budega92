@@ -7,7 +7,7 @@ export default function Sobre() {
   return (
     <div className="flex mx-auto max-w-7xl flex-col items-center justify-between">
       <Header />
-      <div className="bg-gray-100 p-10 rounded-lg">
+      <div className="bg-gray-100 lg:mx-0 mx-4 lg:p-10  rounded-lg items-center justify-center">
         <div className="flex flex-col lg:flex-row mx-auto lg:max-w-5xl lg:p-0 p-4  gap-5 justify-center items-center">
           <div className="flex flex-col justify-center items-center  lg:flex-row lg:gap-14 lg:max-w-5xl w-full">
             <div className=" flex-row justify-center  items-center">

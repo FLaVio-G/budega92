@@ -8,7 +8,7 @@ export default function mapa() {
     <div className="mx-auto max-w-7xl">
       <Header />
       <main className="flex items-center mx-auto max-w-7xl max-h-full justify-center w-full">
-        <div className="bg-gray-100 w-full  rounded-lg p-8">
+        <div className="bg-gray-100 h-[500px]  lg:w-[1100px] md:w-[780px] lg:h-[780px] max-w-7xl  mx-4 lg:p-0 rounded-lg">
           <GoogleMap />
         </div>
       </main>
