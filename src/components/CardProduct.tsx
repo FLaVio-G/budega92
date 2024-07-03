@@ -44,7 +44,7 @@ export function CardProduct({
             }`}
           />
         </div>
-        <h2 className="mt-4 text-lg font-bold">{name}</h2>
+        <h2 className="mt-4 text-red-500 text-lg font-bold">{name}</h2>
         <p className="text-md font-semibold">R$ {price}</p>
       </div>
 

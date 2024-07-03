@@ -102,7 +102,7 @@ const Bebidas: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center bg-gray-100 text-gray-800 rounded-lg h-auto lg:w-[1100px] md:w-[780px] lg:h-[780px] max-w-7xl ">
+      <div className="flex flex-col items-center justify-center bg-customBeige text-gray-800 h-auto lg:w-[1100px] md:w-[780px] lg:h-[780px] max-w-7xl ">
         <div className="grid grid-cols-1 gap-4 w-full h-full sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 items-center  justify-start">
           {filteredProducts?.map((product) => (
             <CardProduct

@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
+    domains: ['via.placeholder.com', 'www.thecocktaildb.com'],
     remotePatterns: [
       {
         hostname: 'images.unsplash.com',

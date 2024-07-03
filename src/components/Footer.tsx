@@ -8,12 +8,12 @@ export default function Footer() {
     <footer className="w-full text-gray-800">
       <div className="flex items-center  justify-center p-4 ">
         <div className="flex flex-col lg:space-y-0 space-y-4  lg:mt-0   items-center  lg:flex-row justify-center max-w-5xl lg:items-start p-6 space-x-4">
-          <div className="max-w-xs mx-auto bg-gray-100 rounded-xl shadow-md overflow-hidden md:max-w-sm">
+          <div className="max-w-xs mx-auto overflow-hidden md:max-w-sm">
             <div className="md:flex">
               <div className="md:shrink-0"></div>
               <div className="p-8">
-                <div className="uppercase tracking-wide text-sm text-gray-800 font-semibold">
-                  Sobre a Budega 92
+                <div className="uppercase tracking-wide text-xl text-gray-800 font-extrabold">
+                  SOBRE A BUDEGA 92
                 </div>
 
                 <p className="mt-2 text-gray-800">
@@ -26,14 +26,13 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="max-w-md mx-auto bg-gray-100 rounded-xl shadow-md  md:max-w-sm overflow-hidden">
+          <div className="max-w-md mx-auto rounded-xl   md:max-w-sm overflow-hidden">
             <div className="md:flex">
               <div className="md:shrink-0"></div>
               <div className="p-8">
-                <div className="uppercase tracking-wide text-sm text-gray-800 font-semibold">
+                <div className="uppercase tracking-wide text-xl text-gray-800 font-extrabold">
                   Funcionalidades
                 </div>
-
                 <p className="mt-2 text-gray-800">Bebidas</p>
                 <p className="mt-2 text-gray-800">Mapa</p>
                 <p className="mt-2 text-gray-800">Sobre</p>
@@ -41,11 +40,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="max-w-md mx-auto bg-gray-100 rounded-xl shadow-md  md:max-w-sm overflow-hidden">
+          <div className="max-w-md mx-auto md:max-w-sm overflow-hidden">
             <div className="md:flex">
               <div className="md:shrink-0"></div>
               <div className="p-8">
-                <div className="uppercase tracking-wide text-sm text-gray-800  font-semibold">
+                <div className="uppercase tracking-wide text-xl text-gray-800  font-semibold">
                   Social
                 </div>
                 <Link
