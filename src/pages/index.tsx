@@ -3,20 +3,30 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GoogleMap from "@/components/GoogleMap";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
     <>
-      <div className="flex  w-full flex-col">
+      <div className="flex w-full flex-col">
         <Header />
-        <main className="flex items-center justify-center mt-[700px] w-full">
-          <div className=" flex flex-col h-auto w-full  items-center justify-center  rounded-lg">
-            <div className="lg:mx-0 mx-4 w-[850px] lg:p-10 items-center justify-center">
-              <div className="flex flex-col justify-center items-center">
-                <h1 className="text-lg font-extrabold text-gray-800 lg:text-lg lg:justify-start flex items-center justify-center mb-4">
+        <main className="mt-[700px] flex w-full items-center justify-center">
+          <div className="flex h-auto w-full flex-col items-center justify-center rounded-lg">
+            <div className="mx-4 w-[850px] items-center justify-center lg:mx-0 lg:p-10">
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="mb-4 flex items-center justify-center text-lg font-extrabold text-gray-800 lg:justify-start lg:text-lg">
                   NOSSA HISTÓRIA
                 </h1>
-                <p className="font-normal text-gray-800 text-center lg:text-xl text-base">
+                <p className="mb-4 text-center text-base font-normal text-gray-800 lg:text-xl">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
                   minus similique consequatur, enim ab vel quae maxime incidunt
                   velit saepe neque magnam sit, debitis aliquam ipsum amet
@@ -24,30 +34,37 @@ export default function Home() {
                   consectetur adipisicing elit. Illum soluta, repellat nihil
                   magni quaerat eligendi praesentium odio. Quod accusantium
                   autem cupiditate saepe labore et distinctio minima, laudantium
-                  eligendi vero ad? Lorem ipsum dolor sit amet, consectetur
-                  adipisicing elit. Repudiandae sequi odit aliquid autem
-                  provident corrupti nostrum corporis excepturi molestias nobis,
-                  necessitatibus, illo est tenetur, explicabo dolor veniam!
-                  Consequatur, nesciunt autem. Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Ut, assumenda! Voluptate odit
-                  distinctio culpa dolore totam dignissimos quos, facilis
-                  perferendis, numquam itaque ab pariatur amet iste dolor a
-                  aspernatur tenetur.
+                  eligendi vero ad?
+                </p>
+                <p className="mb-4 text-center text-base font-normal text-gray-800 lg:text-xl">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Repudiandae sequi odit aliquid autem provident corrupti
+                  nostrum corporis excepturi molestias nobis, necessitatibus,
+                  illo est tenetur, explicabo dolor veniam! Consequatur,
+                  nesciunt autem.
+                </p>
+                <p className="text-center text-base font-normal text-gray-800 lg:text-xl">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut,
+                  assumenda! Voluptate odit distinctio culpa dolore totam
+                  dignissimos quos, facilis perferendis, numquam itaque ab
+                  pariatur amet iste dolor a aspernatur tenetur.
                 </p>
                 <div className="flex lg:text-5xl lg:tracking-wide"></div>
               </div>
             </div>
-            <div className=" flex flex-row w-full items-center justify-between p-1">
-              <div className="flex flex-1 items-center  lg:text-5xl lg:tracking-wide">
-                <p className="font-normal text-gray-800 text-center lg:text-xl text-base">
-                  The Ring Bar, is a traditional English pub with a twist.
-                  Located between Waterloo & Southwark, we have a brilliant beer
-                  selection and authentic Thai menu to match. Sat back from the
-                  Southbank we offer both takeaway and delivery on our food
-                  menu, as well as an extensive wine and beer selection.
+            <div className="flex w-full flex-row items-center justify-between p-1">
+              <div className="flex flex-1 flex-col items-center lg:text-5xl lg:tracking-wide">
+                <h2 className="mb-4 mt-10 text-base font-bold lg:text-xl">
+                  BEBIDAS REGIONAIS
+                </h2>
+                <p className="text-center text-base font-normal text-gray-800 lg:text-xl">
+                  Aqui você encontrará uma variedade de bebidas regionais do
+                  Pará, incluindo a tradicional cachaça de jambu. Além disso,
+                  oferecemos diversos produtos populares no mercado, como
+                  cervejas, vinhos e muito mais.
                 </p>
               </div>
-              <div className="flex items-center justify-end flex-1 w-full h-80 overflow-hidden">
+              <div className="flex h-80 w-full flex-1 items-center justify-end overflow-hidden">
                 <Image
                   src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
                   className=""
@@ -58,8 +75,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className=" flex flex-row w-full  ">
-              <div className="flex items-center bg-red-400   w-[1200px] h-[800px] overflow-hidden">
+            <div className="flex w-full flex-row">
+              <div className="flex h-[800px] w-[1200px] items-center overflow-hidden bg-red-400">
                 <Image
                   src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
                   className=""
@@ -68,45 +85,66 @@ export default function Home() {
                   alt={""}
                 />
               </div>
-              <div className="flex flex-1 flex-col items-center mx-32 w-2 h-2  lg:text-5xl ">
-                <h2 className="lg:text-xl text-base  mt-10 font-bold mb-4">
-                  Menu de produtos
+              <div className="mx-32 flex h-2 w-2 flex-1 flex-col items-center lg:text-5xl">
+                <h2 className="mb-4 mt-10 text-base font-bold lg:text-xl">
+                  MENU DE PRODUTOS
                 </h2>
-                <p className="text-center mt-6 lg:text-xl text-base mb-4">
-                  Our authentic Thai food, 'Johnny Rice,' is available at The
-                  Ring. Grab your takeaway boxes from the Curry Shack or enjoy
-                  our full authentic à la carte menu throughout the day.
+                <p className="mb-4 mt-6 text-center text-base lg:text-xl">
+                  Aqui você encontrará uma variedade de bebidas regionais do
+                  Pará, incluindo a tradicional cachaça de jambu.
                 </p>
-                <p className="text-gray-800 mt-4 text-center lg:text-xl text-base mb-4 ">
-                  The Ring Bar, is a traditional English pub with a twist.
-                  Located between Waterloo & Southwark, we have a brilliant beer
+                <p className="mb-4 mt-4 text-center text-base text-gray-800 lg:text-xl">
+                  Além disso, oferecemos diversos produtos populares no mercado,
+                  como cervejas, vinhos e muito mais.
                 </p>
-                <div className="h-[600px] w-[300px] bg-red-400">
-                  <Image
-                    src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
-                    className=""
-                    width={1200}
-                    height={800}
-                    alt={""}
-                  />
+
+                <div className="flex flex-col items-center justify-center">
+                  <Carousel className="w-full max-w-sm">
+                    <CarouselContent className="-ml-1 w-full">
+                      {Array.from({ length: 5 }).map((_, index) => (
+                        <CarouselItem key={index}>
+                          <div className="p-1">
+                            <CardContent className="flex aspect-square items-center justify-center p-6">
+                              <Image
+                                src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
+                                className="h-full w-full object-cover"
+                                width={500}
+                                height={500}
+                                alt="Imagem da bebida"
+                              />
+                            </CardContent>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                  </Carousel>
+                  <Button
+                    variant={"customOne"}
+                    size={"customOne"}
+                    className="rounded-none border-2 border-black p-4 text-black shadow-lg"
+                  >
+                    VEJA TODOS OS PRODUTOS
+                  </Button>
                 </div>
               </div>
             </div>
             <div
               id="map-view"
-              className=" flex flex-row w-full  items-center justify-between p-1"
+              className="flex w-full flex-row items-center justify-between p-1"
             >
-              <div className="flex flex-1 flex-col  items-center  lg:tracking-wide">
+              <div className="flex flex-1 flex-col items-center lg:tracking-wide">
                 <div className="mx-44 flex flex-col items-center">
-                  <h2 className="text-lg font-extrabold text-gray-800 lg:text-lg lg:justify-start flex items-center justify-center mb-4">
-                    Como encontrar o Bar budega92?
+                  <h2 className="mb-4 flex items-center justify-center text-lg font-extrabold text-gray-800 lg:justify-start lg:text-lg">
+                    NO CORAÇÃO DE SANTARÉM
                   </h2>
-                  <p className="font-normal text-gray-800 text-center lg:text-xl text-base">
+                  <p className="text-center text-base font-normal text-gray-800 lg:text-xl">
                     Localizado próximo ao Parque da Cidade, na travessa Silva
                     Jardim, entre a Avenida Bartolomeu de Gusmão e a Rua Coraci
                     Nunes.
                   </p>
-                  <p className="text-gray-800 mt-4 text-center lg:text-xl text-base mb-4">
+                  <p className="mb-4 mt-4 text-center text-base text-gray-800 lg:text-xl">
                     Horário de funcionamento:
                     <br />
                     Segunda a Sexta: 12h - 15h / 17h - 22h
@@ -117,7 +155,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-1 w-full h-80 overflow-hidden">
+              <div className="flex h-80 w-full flex-1 overflow-hidden">
                 <GoogleMap />
               </div>
             </div>

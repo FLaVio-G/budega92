@@ -1,76 +1,67 @@
-"use client";
 import React from "react";
 import { CiInstagram } from "react-icons/ci";
 import { FaWhatsapp, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
+
 export default function Footer() {
   return (
-    <footer className="w-full text-gray-800">
-      <div className="flex items-center  justify-center p-4 ">
-        <div className="flex flex-col lg:space-y-0 space-y-4  lg:mt-0   items-center  lg:flex-row justify-center max-w-5xl lg:items-start p-6 space-x-4">
-          <div className="max-w-xs mx-auto overflow-hidden md:max-w-sm">
-            <div className="md:flex">
-              <div className="md:shrink-0"></div>
-              <div className="p-8">
-                <div className="uppercase tracking-wide text-xl text-gray-800 font-extrabold">
-                  SOBRE A BUDEGA 92
-                </div>
+    <footer className="w-full text-gray-800 bg-customBeigeTwo py-8">
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="flex flex-col lg:flex-row justify-between space-y-8 lg:space-y-0 lg:space-x-8">
+          <section className="max-w-xs lg:max-w-sm">
+            <h2 className="uppercase tracking-wide text-xl text-gray-800 font-extrabold">
+              SOBRE A BUDEGA 92
+            </h2>
+            <p className="mt-4 text-gray-800">
+              O Bar Budega 92 é um destino exclusivo para apreciadores de
+              bebidas, oferecendo uma experiência única centrada em uma
+              variedade exuberante de coquetéis, destilados e cervejas
+              artesanais.
+            </p>
+          </section>
 
-                <p className="mt-2 text-gray-800">
-                  O Bar Budega 92 é um destino exclusivo para apreciadores de
-                  bebidas, oferecendo uma experiência única centrada em uma
-                  variedade exuberante de coquetéis, destilados e cervejas
-                  artesanais.
-                </p>
-              </div>
-            </div>
-          </div>
+          <section className="max-w-xs lg:max-w-sm">
+            <h2 className="uppercase tracking-wide text-xl text-gray-800 font-extrabold">
+              Funcionalidades
+            </h2>
+            <ul className="mt-4 space-y-2 text-gray-800">
+              <li>Bebidas</li>
+              <li>Mapa</li>
+              <li>Sobre</li>
+            </ul>
+          </section>
 
-          <div className="max-w-md mx-auto rounded-xl   md:max-w-sm overflow-hidden">
-            <div className="md:flex">
-              <div className="md:shrink-0"></div>
-              <div className="p-8">
-                <div className="uppercase tracking-wide text-xl text-gray-800 font-extrabold">
-                  Funcionalidades
-                </div>
-                <p className="mt-2 text-gray-800">Bebidas</p>
-                <p className="mt-2 text-gray-800">Mapa</p>
-                <p className="mt-2 text-gray-800">Sobre</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="max-w-md mx-auto md:max-w-sm overflow-hidden">
-            <div className="md:flex">
-              <div className="md:shrink-0"></div>
-              <div className="p-8">
-                <div className="uppercase tracking-wide text-xl text-gray-800  font-semibold">
-                  Social
-                </div>
-                <Link
-                  className="text-gray-800 mt-2 gap-1 flex row items-center"
-                  href="Instagram"
-                >
-                  <CiInstagram size="20" />
-                  <p>Instagram</p>
+          <section className="max-w-xs lg:max-w-sm">
+            <h2 className="uppercase tracking-wide text-xl text-gray-800 font-extrabold">
+              CONTATO
+            </h2>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <Link href="https://www.instagram.com">
+                  <span className="flex items-center gap-2 text-gray-800 hover:text-gray-600 transition">
+                    <CiInstagram size="20" />
+                    Instagram
+                  </span>
                 </Link>
-                <Link
-                  className="text-gray-800 mt-1 gap-1  flex row items-center"
-                  href="IWhatsapp"
-                >
-                  <FaWhatsapp size="20" />
-                  <p>Whatsapp</p>
+              </li>
+              <li>
+                <Link href="https://wa.me">
+                  <span className="flex items-center gap-2 text-gray-800 hover:text-gray-600 transition">
+                    <FaWhatsapp size="20" />
+                    Whatsapp
+                  </span>
                 </Link>
-                <Link
-                  className="text-gray-800 mt-1 gap-1  flex row items-center"
-                  href="IWhatsapp"
-                >
-                  <FaYoutube size="20" />
-                  <p>Youtube</p>
+              </li>
+              <li>
+                <Link href="https://www.youtube.com">
+                  <span className="flex items-center gap-2 text-gray-800 hover:text-gray-600 transition">
+                    <FaYoutube size="20" />
+                    YouTube
+                  </span>
                 </Link>
-              </div>
-            </div>
-          </div>
+              </li>
+            </ul>
+          </section>
         </div>
       </div>
     </footer>

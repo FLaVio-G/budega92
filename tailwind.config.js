@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       colors: {
         customBeige: '#DAD0C7',
+        customBeigeTwo: '#FBF5E7',
       }
     }
   },

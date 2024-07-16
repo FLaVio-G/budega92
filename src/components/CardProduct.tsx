@@ -29,7 +29,7 @@ export function CardProduct({
   return (
     <div className="grid place-items-center gap-4">
       <div
-        className="flex flex-col p-4 cursor-pointer rounded-lg transition-transform hover:scale-105"
+        className="flex cursor-pointer flex-col rounded-lg p-4 transition-transform hover:scale-105"
         onClick={() => setShowOverlay(true)}
       >
         <div className="relative h-28 w-full rounded-lg bg-gray-200">
@@ -44,16 +44,16 @@ export function CardProduct({
             }`}
           />
         </div>
-        <h2 className="mt-4 text-red-500 text-lg font-bold">{name}</h2>
+        <h2 className="mt-4 text-lg font-bold text-red-500">{name}</h2>
         <p className="text-md font-semibold">R$ {price}</p>
       </div>
 
       {showOverlay && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="flex flex-col items-center justify-center w-full max-w-4xl p-6 bg-white rounded-lg relative">
+          <div className="relative flex w-full max-w-4xl flex-col items-center justify-center rounded-lg bg-white p-6">
             <X
               onClick={() => setShowOverlay(false)}
-              className="absolute top-2 right-2 bg-red-300 p-2 text-3xl cursor-pointer hover:text-red-500"
+              className="absolute right-2 top-2 cursor-pointer bg-red-300 p-2 text-3xl hover:text-red-500"
             />
             <Image
               src={urlImage}
@@ -65,7 +65,7 @@ export function CardProduct({
             />
             <div className="mt-4 text-center">
               <h2 className="text-2xl font-bold">{name}</h2>
-              <div className="mt-2 text-sm h-24 overflow-y-auto text-left">
+              <div className="mt-2 h-24 overflow-y-auto text-left text-sm">
                 {description}
               </div>
               <p className="mt-4 text-lg font-semibold">R$ {price}</p>

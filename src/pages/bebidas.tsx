@@ -75,35 +75,35 @@ const Bebidas: React.FC = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   const filteredProducts = data?.products.filter((product) =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    product.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
-    <div className="flex mx-auto max-w-7xl flex-col items-center justify-between">
+    <div className="mx-auto flex max-w-7xl flex-col items-center justify-between">
       <Header />
-      <div className="flex flex-col w-full items-center justify-center mx-8">
-        <div className="flex flex-col justify-center items-center w-full">
+      <div className="mx-8 flex w-full flex-col items-center justify-center">
+        <div className="flex w-full flex-col items-center justify-center">
           <div className="relative lg:w-80">
             <Input
-              className="bg-gray-100 w-full text-black rounded-lg h-10 pl-10 pr-4 border-none focus:outline-none focus:shadow-lg transition-shadow duration-200 ease-in-out"
+              className="h-10 w-full rounded-lg border-none bg-gray-100 pl-10 pr-4 text-black transition-shadow duration-200 ease-in-out focus:shadow-lg focus:outline-none"
               value={searchTerm}
               onChange={handleSearch}
             />
-            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+            <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 transform text-gray-500" />
           </div>
-          <div className="mt-4 flex items-center justify-center flex-col">
-            <h1 className="lg:text-6xl text-4xl font-semibold text-center">
+          <div className="mt-4 flex flex-col items-center justify-center">
+            <h1 className="text-center text-4xl font-semibold lg:text-6xl">
               Encontre
             </h1>
-            <h2 className="lg:text-lg text-md mb-10 text-center text-gray-800 font-light">
+            <h2 className="text-md mb-10 text-center font-light text-gray-800 lg:text-lg">
               Aqui você pode buscar cervejas, vinhos, destilados entre outros
               produtos
             </h2>
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center bg-customBeige text-gray-800 h-auto lg:w-[1100px] md:w-[780px] lg:h-[780px] max-w-7xl ">
-        <div className="grid grid-cols-1 gap-4 w-full h-full sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 items-center  justify-start">
+      <div className="flex h-auto max-w-7xl flex-col items-center justify-center bg-customBeige text-gray-800 md:w-[780px] lg:h-[780px] lg:w-[1100px]">
+        <div className="grid h-full w-full grid-cols-1 items-center justify-start gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
           {filteredProducts?.map((product) => (
             <CardProduct
               key={product.id}
