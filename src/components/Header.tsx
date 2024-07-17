@@ -6,6 +6,9 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
+import barOne from "../../public/images/barOne.jpg";
+import Image from "next/image";
+
 interface NavLinkProps {
   href: string;
   children: ReactNode;
@@ -26,10 +29,10 @@ export default function Header() {
         <Carousel className="h-[800px] w-[800px] lg:h-auto lg:w-full">
           <CarouselContent className="w-[800px] lg:h-[800px] lg:w-auto">
             <CarouselItem>
-              <img
-                className="h-full w-full object-cover"
-                src="https://via.placeholder.com/800x400?text=Slide+1"
-                alt="Slide 1"
+              <Image
+                src={barOne}
+                alt={"foto de bar"}
+                className="brightness-50"
               />
             </CarouselItem>
           </CarouselContent>

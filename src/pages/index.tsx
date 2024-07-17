@@ -11,8 +11,20 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from "@radix-ui/react-dialog";
+
+import { DialogFooter, DialogHeader } from "@/components/ui/dialog";
+
+import ProductList from "@/components/ProductList";
 
 export default function Home() {
   return (
@@ -120,13 +132,28 @@ export default function Home() {
                     <CarouselPrevious />
                     <CarouselNext />
                   </Carousel>
-                  <Button
-                    variant={"customOne"}
-                    size={"customOne"}
-                    className="rounded-none border-2 border-black p-4 text-black shadow-lg"
-                  >
-                    VEJA TODOS OS PRODUTOS
-                  </Button>
+                  <div>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button
+                          className="rounded-none border-2 border-black"
+                          variant="customOne"
+                        >
+                          VER TODAS AS BEBIDAS
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="fixed inset-0 flex w-full flex-col items-center justify-center bg-customBeige">
+                        <ProductList />
+                        <DialogFooter>
+                          <DialogClose asChild>
+                            <Button type="button" variant="secondary">
+                              Voltar
+                            </Button>
+                          </DialogClose>
+                        </DialogFooter>
+                      </DialogContent>
+                    </Dialog>
+                  </div>
                 </div>
               </div>
             </div>

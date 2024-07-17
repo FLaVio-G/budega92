@@ -21,6 +21,7 @@ const buttonVariants = cva(
           "hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-50",
         link: "text-gray-900 underline-offset-4 hover:underline dark:text-gray-50",
         customOne: "",
+        customTwo: "bg-red border-2 border-black rounded-none",
       },
       size: {
         customOne: "",
