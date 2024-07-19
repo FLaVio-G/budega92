@@ -3,28 +3,19 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GoogleMap from "@/components/GoogleMap";
 import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
-import { CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
-  DialogTitle,
   DialogTrigger,
 } from "@radix-ui/react-dialog";
 
 import { DialogFooter, DialogHeader } from "@/components/ui/dialog";
 
 import ProductList from "@/components/ProductList";
+import ProductVitrine from "@/components/ProductVitrine";
 
 export default function Home() {
   return (
@@ -76,6 +67,7 @@ export default function Home() {
                   cervejas, vinhos e muito mais.
                 </p>
               </div>
+
               <div className="flex h-80 w-full flex-1 items-center justify-end overflow-hidden">
                 <Image
                   src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
@@ -111,48 +103,30 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-col items-center justify-center">
-                  <Carousel className="w-full max-w-sm">
-                    <CarouselContent className="-ml-1 w-full">
-                      {Array.from({ length: 5 }).map((_, index) => (
-                        <CarouselItem key={index}>
-                          <div className="p-1">
-                            <CardContent className="flex aspect-square items-center justify-center p-6">
-                              <Image
-                                src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
-                                className="h-full w-full object-cover"
-                                width={500}
-                                height={500}
-                                alt="Imagem da bebida"
-                              />
-                            </CardContent>
-                          </div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
-                  </Carousel>
-                  <div>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button
-                          className="rounded-none border-2 border-black"
-                          variant="customOne"
-                        >
-                          VER TODAS AS BEBIDAS
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="fixed inset-0 flex w-full flex-col items-center justify-center bg-customBeige">
-                        <ProductList />
-                        <DialogFooter>
-                          <DialogClose asChild>
-                            <Button type="button" variant="secondary">
-                              Voltar
-                            </Button>
-                          </DialogClose>
-                        </DialogFooter>
-                      </DialogContent>
-                    </Dialog>
+                  <div className="flex flex-col">
+                    <ProductVitrine />
+                    <div className="flex flex-col items-center justify-center">
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button
+                            className="w-[200px] rounded-none border-2 border-black"
+                            variant="customOne"
+                          >
+                            VER TODAS AS BEBIDAS
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="fixed inset-0 flex w-full flex-col items-center justify-center bg-customBeige">
+                          <ProductList />
+                          <DialogFooter>
+                            <DialogClose asChild>
+                              <Button type="button" variant="secondary">
+                                Voltar
+                              </Button>
+                            </DialogClose>
+                          </DialogFooter>
+                        </DialogContent>
+                      </Dialog>
+                    </div>
                   </div>
                 </div>
               </div>
