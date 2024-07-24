@@ -13,6 +13,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import Image from "next/image";
 import { X } from "lucide-react";
 import ProductFetch from "../components/data/productFetch";
+import { Button } from "./ui/button";
 
 interface Product {
   id: string;
@@ -37,8 +38,8 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <div className="flex cursor-pointer flex-col rounded-lg p-4 transition-transform hover:scale-105">
-          <div className="relative h-28 w-full rounded-lg bg-gray-200">
+        <div className="flex w-48 cursor-pointer flex-col rounded-lg p-4 shadow-2xl transition-transform hover:scale-105">
+          <div className="relative h-40 w-40 rounded-lg bg-gray-200">
             <Image
               src={product.image[0]?.url}
               layout="fill"
@@ -48,39 +49,43 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
               className={`transition-opacity ${imageLoaded ? "opacity-100" : "opacity-0"}`}
             />
           </div>
-          <h2 className="mt-4 text-lg font-bold text-red-500">
-            {product.name}
-          </h2>
-          <p className="text-md font-semibold">R$ {product.price}</p>
+          <div className="mb-2 mt-2">
+            <h2 className="text-sm font-bold">{product.name}</h2>
+          </div>
+          <p className="text-xs font-semibold">R$ {product.price}</p>
         </div>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-50" />
         <Dialog.Content className="fixed inset-0 z-50 flex items-center justify-center">
-          <div className="relative flex w-full max-w-4xl flex-col items-center justify-center rounded-lg bg-white p-6">
+          <div className="relative flex h-[560px] w-[860px] flex-col items-center justify-center bg-customBeigeTwo p-6">
             <Dialog.Close asChild>
-              <X className="absolute right-2 top-2 cursor-pointer bg-red-300 p-2 text-3xl hover:text-red-500" />
+              <X className="absolute right-2 top-2 h-8 w-8 cursor-pointer p-2 text-3xl hover:text-red-500" />
             </Dialog.Close>
+
             <Image
               src={product.image[0]?.url}
               alt={`${product.name} image`}
               width={300}
               height={300}
-              objectFit="contain"
-              className="rounded-lg"
+              className="h-[250px] w-[300px] rounded-lg object-contain"
             />
-            <div className="mt-4 text-center">
+
+            <div className="mt-4 flex flex-col items-center justify-center text-center">
               <h2 className="text-2xl font-bold">{product.name}</h2>
-              <div className="mt-2 h-24 overflow-y-auto text-left text-sm">
+              <div className="mt-4 h-24 text-left text-sm">
                 {product.description}
               </div>
               <p className="mt-4 text-lg font-semibold">R$ {product.price}</p>
-              <a
-                href="#"
-                className="mt-4 inline-block rounded bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600"
-              >
-                Clique aqui para ver o vídeo
-              </a>
+              <div className="flex flex-row gap-2">
+                <a className="mt-4 inline-block border-2 border-solid border-black bg-none px-4 py-2 text-black transition-colors">
+                  Clique aqui para ver o vídeo
+                </a>
+
+                <a className="mt-4 inline-block border-2 border-solid border-black bg-none px-4 py-2 text-black transition-colors">
+                  Clique aqui pedir pelo Whatsapp
+                </a>
+              </div>
             </div>
           </div>
         </Dialog.Content>
@@ -145,13 +150,13 @@ const ProductList: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-4 flex h-auto max-w-7xl flex-col items-center justify-center border-2 border-black bg-customBeige text-gray-800 md:w-[780px] lg:h-[780px] lg:w-[1100px]">
+            <div className="mt-4 flex h-auto max-w-7xl flex-col items-center justify-center bg-customBeige text-gray-800 md:w-[780px] lg:h-[780px] lg:w-[1100px]">
               <div className="grid h-full w-full grid-cols-1 items-center justify-start gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
                 {filteredProducts?.map((product) => (
                   <CardProduct key={product.id} product={product} />
                 ))}
               </div>
-              <Pagination>
+              <Pagination className="p-2">
                 <PaginationContent>
                   <PaginationItem>
                     <PaginationPrevious onClick={handlePreviousPage} />
@@ -160,7 +165,7 @@ const ProductList: React.FC = () => {
                     <PaginationLink href="#">{currentPage}</PaginationLink>
                   </PaginationItem>
                   <PaginationItem>
-                    <PaginationNext onClick={handleNextPage} />
+                    <PaginationNext className="" onClick={handleNextPage} />
                   </PaginationItem>
                 </PaginationContent>
               </Pagination>

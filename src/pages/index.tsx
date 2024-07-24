@@ -116,14 +116,16 @@ export default function Home() {
                           </Button>
                         </DialogTrigger>
                         <DialogContent className="fixed inset-0 flex w-full flex-col items-center justify-center bg-customBeige">
+                          <DialogClose className="fixed right-4 top-4" asChild>
+                            <Button
+                              type="button"
+                              className="w-[100px] rounded-none border-2 border-black"
+                              variant="customOne"
+                            >
+                              Voltar
+                            </Button>
+                          </DialogClose>
                           <ProductList />
-                          <DialogFooter>
-                            <DialogClose asChild>
-                              <Button type="button" variant="secondary">
-                                Voltar
-                              </Button>
-                            </DialogClose>
-                          </DialogFooter>
                         </DialogContent>
                       </Dialog>
                     </div>

@@ -34,7 +34,7 @@ export default function ProductVitrine() {
                       alt={product.name}
                       className="h-[300px] w-[300px] rounded-lg"
                     />
-                    <h2 className="mt-2 text-lg font-bold">{product.name}</h2>
+                    <h2 className="mt-2 text-lg font-normal">{product.name}</h2>
                   </CarouselItem>
                 ))}
               </CarouselContent>

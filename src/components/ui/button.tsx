@@ -22,9 +22,12 @@ const buttonVariants = cva(
         link: "text-gray-900 underline-offset-4 hover:underline dark:text-gray-50",
         customOne: "",
         customTwo: "bg-red border-2 border-black rounded-none",
+        customThree:
+          "bg-none border-2 border-black rounded-none cursor-pointer",
       },
       size: {
         customOne: "",
+        customThree: "h-10 px-4 py-2",
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
