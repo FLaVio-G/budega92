@@ -20,10 +20,13 @@ import ProductVitrine from "@/components/ProductVitrine";
 export default function Home() {
   return (
     <>
-      <div className="flex w-full flex-col">
+      <div id="inicio" className="flex w-full flex-col">
         <Header />
         <main className="mt-[700px] flex w-full items-center justify-center">
-          <div className="flex h-auto w-full flex-col items-center justify-center rounded-lg">
+          <div
+            id="sobre"
+            className="flex h-auto w-full flex-col items-center justify-center rounded-lg"
+          >
             <div className="mx-4 w-[850px] items-center justify-center lg:mx-0 lg:p-10">
               <div className="flex flex-col items-center justify-center">
                 <h1 className="mb-4 flex items-center justify-center text-lg font-extrabold text-gray-800 lg:justify-start lg:text-lg">
@@ -89,7 +92,10 @@ export default function Home() {
                   alt={""}
                 />
               </div>
-              <div className="mx-32 flex h-2 w-2 flex-1 flex-col items-center lg:text-5xl">
+              <div
+                id="bebidas"
+                className="mx-32 flex h-2 w-2 flex-1 flex-col items-center lg:text-5xl"
+              >
                 <h2 className="mb-4 mt-10 text-base font-bold lg:text-xl">
                   MENU DE PRODUTOS
                 </h2>
@@ -158,7 +164,10 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="flex h-80 w-full flex-1 overflow-hidden">
+              <div
+                id="maps"
+                className="flex h-80 w-full flex-1 overflow-hidden"
+              >
                 <GoogleMap />
               </div>
             </div>
