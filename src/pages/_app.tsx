@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
       <main>
-        <div className="min-h-screen">
+        <div className="">
           <Component {...pageProps} />
         </div>
       </main>

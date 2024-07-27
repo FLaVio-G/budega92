@@ -20,7 +20,7 @@ export default function ProductVitrine() {
           if (error) return <p>Error: {error.message}</p>;
 
           return (
-            <Carousel className="mx-auto w-full max-w-lg">
+            <Carousel className="w-48 lg:mx-auto lg:w-full lg:max-w-lg">
               <CarouselContent>
                 {data?.products.map((product) => (
                   <CarouselItem
@@ -32,7 +32,7 @@ export default function ProductVitrine() {
                       height={1000}
                       src={product.image[0].url}
                       alt={product.name}
-                      className="h-[300px] w-[300px] rounded-lg"
+                      className="h-[250px] w-[200px] rounded-lg lg:h-[250px] lg:w-[250px]"
                     />
                     <h2 className="mt-2 text-lg font-normal">{product.name}</h2>
                   </CarouselItem>

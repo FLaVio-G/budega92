@@ -13,7 +13,6 @@ import * as Dialog from "@radix-ui/react-dialog";
 import Image from "next/image";
 import { X } from "lucide-react";
 import ProductFetch from "../components/data/productFetch";
-import { Button } from "./ui/button";
 
 interface Product {
   id: string;
@@ -38,8 +37,8 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <div className="flex w-48 cursor-pointer flex-col rounded-lg p-4 shadow-2xl transition-transform hover:scale-105">
-          <div className="relative h-40 w-40 rounded-lg bg-gray-200">
+        <div className="xs:p-4 flex w-full max-w-xs cursor-pointer flex-col p-2 shadow-2xl transition-transform hover:scale-105 sm:w-48">
+          <div className="xs:h-40 Lg:w-[170px] relative w-auto bg-gray-200 p-8 sm:h-[160px] sm:w-[170px] lg:h-[160px]">
             <Image
               src={product.image[0]?.url}
               layout="fill"
@@ -50,7 +49,7 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
             />
           </div>
           <div className="mb-2 mt-2">
-            <h2 className="text-sm font-bold">{product.name}</h2>
+            <h2 className="xs:text-sm text-xs font-bold">{product.name}</h2>
           </div>
           <p className="text-xs font-semibold">R$ {product.price}</p>
         </div>
@@ -151,7 +150,7 @@ const ProductList: React.FC = () => {
               </div>
             </div>
             <div className="mt-4 flex h-auto max-w-7xl flex-col items-center justify-center bg-customBeige text-gray-800 md:w-[780px] lg:h-[780px] lg:w-[1100px]">
-              <div className="grid h-full w-full grid-cols-1 items-center justify-start gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+              <div className="grid h-full w-full grid-cols-2 items-center justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
                 {filteredProducts?.map((product) => (
                   <CardProduct key={product.id} product={product} />
                 ))}

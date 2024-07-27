@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'below290': { 'max': '290px' }, 
+      },
       colors: {
         customBeige: '#DAD0C7',
         customBeigeTwo: '#FBF5E7',
