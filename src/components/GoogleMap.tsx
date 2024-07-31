@@ -1,12 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
+import {
+  GoogleMap,
+  useJsApiLoader,
+  Marker,
+  InfoWindow,
+} from "@react-google-maps/api";
+import budega92 from "../../public/images/budega-v1.svg";
 
-const GoogleMap: React.FC = () => {
-  return (
-    <iframe
-      className="h-full w-full"
-      src="https://www.google.com/maps/d/embed?mid=134wTQZUtiLzuOsPK9l4U1NBgXtK6P_E&ehbc=2E312F"
-    ></iframe>
-  );
+const containerStyle = {
+  width: "100%",
+  height: "100%",
 };
 
-export default GoogleMap;
+const center = {
+  lat: -2.4326683908759255,
+  lng: -54.720119588456484,
+};
+
+const markerPosition = {
+  lat: -2.4326683908759255,
+  lng: -54.720119588456484,
+};
+
+function MyComponent() {
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
+  });
+
+  const [map, setMap] = React.useState<google.maps.Map | null>(null);
+  const [infoWindowOpen, setInfoWindowOpen] = useState(false);
+
+  const onLoad = React.useCallback((map: google.maps.Map) => {
+    const bounds = new google.maps.LatLngBounds();
+    bounds.extend(markerPosition);
+    map.fitBounds(bounds);
+
+    setMap(map);
+  }, []);
+
+  const onUnmount = React.useCallback(() => {
+    setMap(null);
+  }, []);
+
+  const handleMarkerClick = () => {
+    setInfoWindowOpen(true);
+  };
+
+  const handleCloseClick = () => {
+    setInfoWindowOpen(false);
+  };
+
+  return isLoaded ? (
+    <GoogleMap
+      mapContainerStyle={containerStyle}
+      center={center}
+      zoom={15}
+      onLoad={onLoad}
+      onUnmount={onUnmount}
+    >
+      <Marker
+        position={markerPosition}
+        icon={{
+          url: budega92.src,
+          scaledSize: new google.maps.Size(70, 70),
+        }}
+        onClick={handleMarkerClick}
+      />
+      {infoWindowOpen && (
+        <InfoWindow position={markerPosition} onCloseClick={handleCloseClick}>
+          <div>
+            <h1>Budega 92</h1>
+            <p>
+              O Bar Budega 92 é um destino exclusivo para apreciadores de
+              bebidas, oferecendo uma experiência única centrada em uma
+              variedade exuberante de coquetéis, destilados e cervejas
+              artesanais.
+            </p>
+          </div>
+        </InfoWindow>
+      )}
+    </GoogleMap>
+  ) : (
+    <></>
+  );
+}
+
+export default React.memo(MyComponent);

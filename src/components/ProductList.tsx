@@ -13,6 +13,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import Image from "next/image";
 import { X } from "lucide-react";
 import ProductFetch from "../components/data/productFetch";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 interface Product {
   id: string;
@@ -37,15 +38,21 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <div className="xs:p-4 flex w-full max-w-xs cursor-pointer flex-col p-2 shadow-2xl transition-transform hover:scale-105 sm:w-48">
-          <div className="xs:h-40 Lg:w-[170px] relative w-auto bg-gray-200 p-8 sm:h-[160px] sm:w-[170px] lg:h-[160px]">
+        <div className="xs:p-4 flex w-full max-w-xs cursor-pointer flex-col p-2 shadow-lg transition-transform hover:scale-105 sm:w-48">
+          <div className="xs:h-40 Lg:w-[170px] customBeigeTwo relative w-auto p-8 sm:h-[160px] sm:w-[170px] lg:h-[160px]">
             <Image
               src={product.image[0]?.url}
-              layout="fill"
-              objectFit="cover"
               alt={`${product.name} image`}
               onLoadingComplete={handleImageLoad}
               className={`transition-opacity ${imageLoaded ? "opacity-100" : "opacity-0"}`}
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+                width: "170px",
+                height: "120px",
+              }}
+              width={160}
+              height={170}
             />
           </div>
           <div className="mb-2 mt-2">
@@ -56,21 +63,39 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-50" />
-        <Dialog.Content className="fixed inset-0 z-50 flex items-center justify-center">
+        <Dialog.Content
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          aria-labelledby={`dialog-title-${product.id}`}
+          aria-describedby={`dialog-description-${product.id}`}
+        >
           <div className="relative flex h-[560px] w-[860px] flex-col items-center justify-center bg-customBeigeTwo p-6">
             <Dialog.Close asChild>
               <X className="absolute right-2 top-2 h-8 w-8 cursor-pointer p-2 text-3xl hover:text-red-500" />
             </Dialog.Close>
+
+            {/* VisuallyHidden component to hide the title from the screen but keep it accessible */}
+            <VisuallyHidden>
+              <Dialog.Title id={`dialog-title-${product.id}`}>
+                {product.name}
+              </Dialog.Title>
+            </VisuallyHidden>
 
             <Image
               src={product.image[0]?.url}
               alt={`${product.name} image`}
               width={300}
               height={300}
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
               className="h-[250px] w-[300px] rounded-lg object-contain"
             />
 
-            <div className="mt-4 flex flex-col items-center justify-center text-center">
+            <div
+              id={`dialog-description-${product.id}`}
+              className="mt-4 flex flex-col items-center justify-center text-center"
+            >
               <h2 className="text-2xl font-bold">{product.name}</h2>
               <div className="mt-4 h-24 text-left text-sm">
                 {product.description}
@@ -149,7 +174,7 @@ const ProductList: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-4 flex h-auto max-w-7xl flex-col items-center justify-center bg-customBeige text-gray-800 md:w-[780px] lg:h-[780px] lg:w-[1100px]">
+            <div className="mt-4 flex h-auto max-w-7xl flex-col items-center justify-center bg-customBeigeTwo text-gray-800 md:w-[780px] lg:h-[780px] lg:w-[1100px]">
               <div className="grid h-full w-full grid-cols-2 items-center justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
                 {filteredProducts?.map((product) => (
                   <CardProduct key={product.id} product={product} />

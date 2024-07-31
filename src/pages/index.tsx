@@ -1,26 +1,22 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import GoogleMap from "@/components/GoogleMap";
+
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogTrigger,
-} from "@radix-ui/react-dialog";
+import * as Dialog from "@radix-ui/react-dialog";
 
 import ProductList from "@/components/ProductList";
 import ProductVitrine from "@/components/ProductVitrine";
+import SimpleMap from "@/components/GoogleMap";
 
 export default function Home() {
   return (
     <>
       <div id="inicio" className="flex w-full flex-col">
         <Header />
-        <main className="flex w-full items-center justify-center sm:mt-[200px] md:mt-[400px] lg:mt-[700px]">
+        <main className="flex w-full items-center justify-center sm:mt-4 md:mt-4 lg:mt-[700px]">
           <div
             id="sobre"
             className="flex h-auto w-full flex-col items-center justify-center rounded-lg"
@@ -56,7 +52,7 @@ export default function Home() {
                 <div className="flex lg:text-5xl lg:tracking-wide"></div>
               </div>
             </div>
-            <div className="sm:flex:row flex w-full flex-col items-center justify-between p-1 md:flex-row lg:flex-row">
+            <div className="sm:flex:row flex w-full flex-col-reverse items-center justify-between p-1 md:flex-row lg:flex-row">
               <div className="flex flex-1 flex-col items-center lg:text-5xl lg:tracking-wide">
                 <h2 className="mb-4 mt-10 text-base font-bold sm:text-lg lg:text-xl">
                   BEBIDAS REGIONAIS
@@ -69,13 +65,18 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="hidden h-80 w-full flex-1 items-center justify-end overflow-hidden lg:sm:md:flex">
+              <div className="h-80 w-full flex-1 items-center justify-end overflow-hidden lg:sm:md:flex">
                 <Image
                   src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
-                  className=""
+                  alt="Descrição da imagem"
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    width: "100%",
+                    height: "auto",
+                  }}
                   width={800}
                   height={500}
-                  alt={""}
                 />
               </div>
             </div>
@@ -84,10 +85,15 @@ export default function Home() {
               <div className="flex h-[300px] w-full items-center overflow-hidden sm:h-[400px] md:h-[600px] lg:h-[800px] lg:w-full">
                 <Image
                   src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
-                  className=""
+                  alt="Descrição da imagem"
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    width: "100%",
+                    height: "auto",
+                  }}
                   width={1200}
                   height={800}
-                  alt={""}
                 />
               </div>
               <div
@@ -120,31 +126,37 @@ export default function Home() {
                   <div className="flex flex-col">
                     <ProductVitrine />
                     <div className="flex flex-col items-center justify-center">
-                      <Dialog>
-                        <DialogTrigger asChild>
+                      <Dialog.Root>
+                        <Dialog.Trigger asChild>
                           <Button
                             className="w-[200px] rounded-none border-2 border-black"
                             variant="customOne"
                           >
                             VER TODAS AS BEBIDAS
                           </Button>
-                        </DialogTrigger>
-                        <DialogContent className="fixed inset-0 flex w-full flex-col items-center justify-center bg-customBeige">
-                          <DialogClose
-                            className="below290:right-1 fixed right-4 top-4"
-                            asChild
-                          >
-                            <Button
-                              type="button"
-                              className="below290:w-[30px] below290:text-xs rounded-none border-2 border-black lg:w-[100px]"
-                              variant="customOne"
-                            >
-                              Voltar
-                            </Button>
-                          </DialogClose>
-                          <ProductList />
-                        </DialogContent>
-                      </Dialog>
+                        </Dialog.Trigger>
+                        <Dialog.Portal>
+                          <Dialog.Overlay className="fixed inset-0 bg-black/50" />
+                          <Dialog.Content className="fixed inset-0 flex w-full flex-col items-center justify-center bg-customBeigeTwo p-4">
+                            <Dialog.Title className="sr-only">
+                              Lista de Bebidas
+                            </Dialog.Title>
+                            <Dialog.Description className="sr-only">
+                              Aqui estão todas as bebidas disponíveis.
+                            </Dialog.Description>
+                            <Dialog.Close asChild>
+                              <Button
+                                type="button"
+                                className="fixed right-4 top-4 rounded-none border-2 border-black lg:w-[100px] below290:w-[30px] below290:text-xs"
+                                variant="customOne"
+                              >
+                                Voltar
+                              </Button>
+                            </Dialog.Close>
+                            <ProductList />
+                          </Dialog.Content>
+                        </Dialog.Portal>
+                      </Dialog.Root>
                     </div>
                   </div>
                 </div>
@@ -152,7 +164,7 @@ export default function Home() {
             </div>
             <div
               id="map-view"
-              className="flex w-full flex-col items-center justify-between p-1 lg:flex-row"
+              className="flex w-full flex-col items-center justify-between lg:mt-2 lg:flex-row"
             >
               <div className="mt-10 flex flex-1 flex-col items-center lg:mt-0 lg:tracking-wide">
                 <div className="mx-4 flex flex-col items-center sm:mx-8 md:mx-16 lg:mx-44">
@@ -177,12 +189,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-
               <div
                 id="maps"
-                className="flex h-80 w-full flex-1 overflow-hidden"
+                className="flex h-64 w-full overflow-hidden sm:h-80 md:h-96 lg:h-80 lg:w-[800px]"
               >
-                <GoogleMap />
+                <SimpleMap />
               </div>
             </div>
           </div>

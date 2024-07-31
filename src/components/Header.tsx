@@ -1,12 +1,7 @@
 import React, { ReactNode } from "react";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import {
-  HamburgerMenuIcon,
-  DotFilledIcon,
-  CheckIcon,
-  ChevronRightIcon,
-} from "@radix-ui/react-icons";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 import Link from "next/link";
 import {
@@ -16,7 +11,7 @@ import {
 } from "@/components/ui/carousel";
 
 import barOne from "../../public/images/barOne.jpg";
-import budega92 from "../../public/images/Component 3.svg";
+import budega92 from "../../public/images/budega-v1.svg";
 import Image from "next/image";
 
 interface NavLinkProps {
@@ -27,7 +22,23 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
   <Link href={href} legacyBehavior>
     <a
-      className="font-pt-serif z-10 text-xl text-gray-100 transition duration-300 hover:border-b-2 hover:border-red-600"
+      className="font-pt-serif z-10 p-2 text-xl text-gray-100 transition duration-300 hover:border-2"
+      onClick={(e) => {
+        e.preventDefault();
+        document.querySelector(href)?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }}
+    >
+      {children}
+    </a>
+  </Link>
+);
+
+const NavLinkTwo: React.FC<NavLinkProps> = ({ href, children }) => (
+  <Link href={href} legacyBehavior>
+    <a
+      className="font-pt-serif z-10 text-xl text-gray-900 transition duration-300 hover:border-b-2"
       onClick={(e) => {
         e.preventDefault();
         document.querySelector(href)?.scrollIntoView({
@@ -51,12 +62,25 @@ export default function Header() {
                 src={barOne}
                 alt={"foto de bar"}
                 className="object-cover brightness-50"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  width: "100%",
+                  height: "auto",
+                }}
+                priority
               />
               <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-0">
                 <Image
                   className="h-[120px] w-[120px] lg:h-[300px] lg:w-[300px]"
-                  alt={"logo Budega 92"}
+                  alt="logo budega 92"
                   src={budega92}
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    width: "25%",
+                    height: "auto",
+                  }}
                 />
               </div>
             </CarouselItem>
@@ -86,16 +110,16 @@ export default function Header() {
               sideOffset={5}
             >
               <DropdownMenu.Item className="text-violet11 data-[disabled]:text-mauve8 data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1 group relative flex h-[25px] select-none items-center rounded-[3px] px-[5px] pl-[25px] text-[13px] leading-none outline-none data-[disabled]:pointer-events-none">
-                ÍNICIO
+                <NavLinkTwo href="#inicio">INÍCIO</NavLinkTwo>
               </DropdownMenu.Item>
               <DropdownMenu.Item className="text-violet11 data-[disabled]:text-mauve8 data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1 group relative flex h-[25px] select-none items-center rounded-[3px] px-[5px] pl-[25px] text-[13px] leading-none outline-none data-[disabled]:pointer-events-none">
-                BEBIDAS
+                <NavLinkTwo href="#bebidas">BEBIDAS</NavLinkTwo>
               </DropdownMenu.Item>
               <DropdownMenu.Item className="text-violet11 data-[disabled]:text-mauve8 data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1 group relative flex h-[25px] select-none items-center rounded-[3px] px-[5px] pl-[25px] text-[13px] leading-none outline-none data-[disabled]:pointer-events-none">
-                MAPA
+                <NavLinkTwo href="#maps">MAPA</NavLinkTwo>
               </DropdownMenu.Item>
               <DropdownMenu.Item className="text-violet11 data-[disabled]:text-mauve8 data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1 group relative flex h-[25px] select-none items-center rounded-[3px] px-[5px] pl-[25px] text-[13px] leading-none outline-none data-[disabled]:pointer-events-none">
-                SOBRE
+                <NavLinkTwo href="#sobre">SOBRE</NavLinkTwo>
               </DropdownMenu.Item>
             </DropdownMenu.Content>
           </DropdownMenu.Portal>
