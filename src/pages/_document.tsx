@@ -3,8 +3,10 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="pt-BR">
       <Head>
+        <title>Budega 02</title>
+        <meta name="description" content="Página do bar Budega 92" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
