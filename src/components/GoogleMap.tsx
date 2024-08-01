@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import {
   GoogleMap,
   useJsApiLoader,
@@ -22,16 +22,16 @@ const markerPosition = {
   lng: -54.720119588456484,
 };
 
-function MyComponent() {
+function GoogleMapComponent() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
   });
 
-  const [map, setMap] = React.useState<google.maps.Map | null>(null);
+  const [map, setMap] = useState<google.maps.Map | null>(null);
   const [infoWindowOpen, setInfoWindowOpen] = useState(false);
 
-  const onLoad = React.useCallback((map: google.maps.Map) => {
+  const onLoad = useCallback((map: google.maps.Map) => {
     const bounds = new google.maps.LatLngBounds();
     bounds.extend(markerPosition);
     map.fitBounds(bounds);
@@ -39,7 +39,7 @@ function MyComponent() {
     setMap(map);
   }, []);
 
-  const onUnmount = React.useCallback(() => {
+  const onUnmount = useCallback(() => {
     setMap(null);
   }, []);
 
@@ -86,4 +86,4 @@ function MyComponent() {
   );
 }
 
-export default React.memo(MyComponent);
+export default React.memo(GoogleMapComponent);
