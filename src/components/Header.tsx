@@ -78,7 +78,7 @@ export default function Header() {
                   style={{
                     objectFit: "cover",
                     objectPosition: "center",
-                    width: "25%",
+                    width: "35%",
                     height: "auto",
                   }}
                 />

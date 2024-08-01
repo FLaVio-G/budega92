@@ -46,7 +46,7 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
               onLoadingComplete={handleImageLoad}
               className={`transition-opacity ${imageLoaded ? "opacity-100" : "opacity-0"}`}
               style={{
-                objectFit: "cover",
+                objectFit: "contain",
                 objectPosition: "center",
                 width: "170px",
                 height: "120px",
@@ -73,7 +73,6 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
               <X className="absolute right-2 top-2 h-8 w-8 cursor-pointer p-2 text-3xl hover:text-red-500" />
             </Dialog.Close>
 
-            {/* VisuallyHidden component to hide the title from the screen but keep it accessible */}
             <VisuallyHidden>
               <Dialog.Title id={`dialog-title-${product.id}`}>
                 {product.name}
@@ -86,10 +85,10 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
               width={300}
               height={300}
               style={{
-                objectFit: "cover",
+                objectFit: "contain",
                 objectPosition: "center",
               }}
-              className="h-[250px] w-[300px] rounded-lg object-contain"
+              className="h-[250px] w-[300px] object-contain"
             />
 
             <div

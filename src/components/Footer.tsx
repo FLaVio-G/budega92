@@ -25,9 +25,21 @@ export default function Footer() {
               Funcionalidades
             </h2>
             <ul className="mt-4 space-y-2 text-gray-800">
-              <li>Bebidas</li>
-              <li>Mapa</li>
-              <li>Sobre</li>
+              <li>
+                <a href="#bebidas" className="hover:underline">
+                  Bebidas
+                </a>
+              </li>
+              <li>
+                <a href="#maps" className="hover:underline">
+                  Mapa
+                </a>
+              </li>
+              <li>
+                <a href="#sobre" className="hover:underline">
+                  Sobre
+                </a>
+              </li>
             </ul>
           </section>
 
@@ -37,7 +49,7 @@ export default function Footer() {
             </h2>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link href="https://www.instagram.com">
+                <Link href="https://www.instagram.com/budega.92/">
                   <span className="flex items-center gap-2 text-gray-800 transition hover:text-gray-600">
                     <CiInstagram size="20" />
                     Instagram

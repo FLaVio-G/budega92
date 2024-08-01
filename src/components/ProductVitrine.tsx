@@ -32,7 +32,11 @@ export default function ProductVitrine() {
                       height={1000}
                       src={product.image[0].url}
                       alt={product.name}
-                      className="h-[250px] w-[200px] rounded-lg lg:h-[250px] lg:w-[250px]"
+                      className="h-[250px] w-[200px] lg:h-[250px] lg:w-[250px]"
+                      style={{
+                        objectFit: "contain",
+                        objectPosition: "center",
+                      }}
                     />
                     <h2 className="mt-2 text-lg font-normal">{product.name}</h2>
                   </CarouselItem>
