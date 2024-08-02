@@ -13,13 +13,13 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -2.4326683908759255,
-  lng: -54.720119588456484,
+  lat: -2.432806349504045,
+  lng: -54.720066169194325,
 };
 
 const markerPosition = {
-  lat: -2.4326683908759255,
-  lng: -54.720119588456484,
+  lat: -2.432806349504045,
+  lng: -54.720066169194325,
 };
 
 function GoogleMapComponent() {

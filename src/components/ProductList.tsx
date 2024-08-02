@@ -68,7 +68,7 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
           aria-labelledby={`dialog-title-${product.id}`}
           aria-describedby={`dialog-description-${product.id}`}
         >
-          <div className="relative flex h-[560px] w-[860px] flex-col items-center justify-center bg-customBeigeTwo p-6">
+          <div className="relative flex h-full w-[860px] flex-col items-center justify-center bg-customBeigeTwo p-6 lg:h-[560px]">
             <Dialog.Close asChild>
               <X className="absolute right-2 top-2 h-8 w-8 cursor-pointer p-2 text-3xl hover:text-red-500" />
             </Dialog.Close>
@@ -95,12 +95,13 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
               id={`dialog-description-${product.id}`}
               className="mt-4 flex flex-col items-center justify-center text-center"
             >
-              <h2 className="text-2xl font-bold">{product.name}</h2>
-              <div className="mt-4 h-24 text-left text-sm">
+              <div className="sm:tex flex h-auto flex-col items-center gap-4 text-start sm:h-24 lg:h-24 lg:text-center">
+                <h2 className="text-2xl font-bold">{product.name}</h2>
                 {product.description}
+                <p className="text-lg font-semibold">R$ {product.price}</p>
               </div>
-              <p className="mt-4 text-lg font-semibold">R$ {product.price}</p>
-              <div className="flex flex-row gap-2">
+
+              <div className="flex flex-row gap-2 sm:mt-16 lg:mt-14">
                 <a className="mt-4 inline-block border-2 border-solid border-black bg-none px-4 py-2 text-black transition-colors">
                   Clique aqui para ver o vídeo
                 </a>
