@@ -38,7 +38,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
 const NavLinkTwo: React.FC<NavLinkProps> = ({ href, children }) => (
   <Link href={href} legacyBehavior>
     <a
-      className="font-pt-serif z-10 text-xl text-gray-900 transition duration-300 hover:border-b-2"
+      className="z-10 text-xl text-gray-900 no-underline outline-none transition duration-300 hover:bg-customBeige active:text-customBeige"
       onClick={(e) => {
         e.preventDefault();
         document.querySelector(href)?.scrollIntoView({
@@ -57,6 +57,60 @@ export default function Header() {
       <div className="inset-0 z-0 h-auto w-full lg:absolute lg:h-2">
         <Carousel className="relative h-full lg:h-[800px] lg:w-full">
           <CarouselContent className="relative h-auto lg:h-[800px] lg:w-auto">
+            <CarouselItem className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[800px]">
+              <Image
+                src={barOne}
+                alt={"foto de bar"}
+                className="object-cover brightness-50"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  width: "100%",
+                  height: "auto",
+                }}
+                priority
+              />
+              <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-0">
+                <Image
+                  className="h-[120px] w-[120px] lg:h-[300px] lg:w-[300px]"
+                  alt="logo budega 92"
+                  src={budega92}
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    width: "35%",
+                    height: "auto",
+                  }}
+                />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[800px]">
+              <Image
+                src={barOne}
+                alt={"foto de bar"}
+                className="object-cover brightness-50"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  width: "100%",
+                  height: "auto",
+                }}
+                priority
+              />
+              <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-0">
+                <Image
+                  className="h-[120px] w-[120px] lg:h-[300px] lg:w-[300px]"
+                  alt="logo budega 92"
+                  src={budega92}
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    width: "35%",
+                    height: "auto",
+                  }}
+                />
+              </div>
+            </CarouselItem>
             <CarouselItem className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[800px]">
               <Image
                 src={barOne}
@@ -106,19 +160,19 @@ export default function Header() {
 
           <DropdownMenu.Portal>
             <DropdownMenu.Content
-              className="data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade min-w-[220px] border-2 border-black bg-customBeige p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform]"
+              className="data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade mr-4 min-w-[220px] border-2 border-black bg-customBeige p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform]"
               sideOffset={5}
             >
-              <DropdownMenu.Item className="text-violet11 data-[disabled]:text-mauve8 data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1 group relative flex h-[25px] select-none items-center rounded-[3px] px-[5px] pl-[25px] text-[13px] leading-none outline-none data-[disabled]:pointer-events-none">
+              <DropdownMenu.Item className="group relative ml-4 mt-4 flex h-[25px] select-none items-center leading-none outline-none">
                 <NavLinkTwo href="#inicio">INÍCIO</NavLinkTwo>
               </DropdownMenu.Item>
-              <DropdownMenu.Item className="text-violet11 data-[disabled]:text-mauve8 data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1 group relative flex h-[25px] select-none items-center rounded-[3px] px-[5px] pl-[25px] text-[13px] leading-none outline-none data-[disabled]:pointer-events-none">
+              <DropdownMenu.Item className="group relative ml-4 mt-4 flex h-[25px] select-none items-center leading-none outline-none">
                 <NavLinkTwo href="#bebidas">BEBIDAS</NavLinkTwo>
               </DropdownMenu.Item>
-              <DropdownMenu.Item className="text-violet11 data-[disabled]:text-mauve8 data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1 group relative flex h-[25px] select-none items-center rounded-[3px] px-[5px] pl-[25px] text-[13px] leading-none outline-none data-[disabled]:pointer-events-none">
+              <DropdownMenu.Item className="group relative ml-4 mt-4 flex h-[25px] select-none items-center leading-none outline-none">
                 <NavLinkTwo href="#maps">MAPA</NavLinkTwo>
               </DropdownMenu.Item>
-              <DropdownMenu.Item className="text-violet11 data-[disabled]:text-mauve8 data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1 group relative flex h-[25px] select-none items-center rounded-[3px] px-[5px] pl-[25px] text-[13px] leading-none outline-none data-[disabled]:pointer-events-none">
+              <DropdownMenu.Item className="group relative ml-4 mt-4 flex h-[25px] select-auto items-center leading-none outline-none">
                 <NavLinkTwo href="#sobre">SOBRE</NavLinkTwo>
               </DropdownMenu.Item>
             </DropdownMenu.Content>
