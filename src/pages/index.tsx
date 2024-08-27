@@ -21,47 +21,34 @@ export default function Home() {
             id="sobre"
             className="flex h-auto w-full flex-col items-center justify-center rounded-lg"
           >
-            <div className="mx-4 w-full items-center justify-center sm:mx-4 sm:p-4 md:mx-8 md:p-8 lg:mx-0 lg:w-[850px] lg:p-10">
+            {/* <div className="mx-4 w-full items-center justify-center sm:mx-4 sm:p-4 md:mx-8 md:p-8 lg:mx-0 lg:w-[850px] lg:p-10">
               <div className="flex flex-col items-center justify-center">
                 <h1 className="mb-4 flex items-center justify-center text-lg font-extrabold text-gray-800 sm:text-xl lg:justify-start lg:text-lg">
                   NOSSA HISTÓRIA
                 </h1>
                 <p className="mb-4 text-center text-base font-normal text-gray-800 sm:text-lg md:text-xl lg:text-xl">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-                  minus similique consequatur, enim ab vel quae maxime incidunt
-                  velit saepe neque magnam sit, debitis aliquam ipsum amet
-                  laborum nostrum dolorum. Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit. Illum soluta, repellat nihil
-                  magni quaerat eligendi praesentium odio. Quod accusantium
-                  autem cupiditate saepe labore et distinctio minima, laudantium
-                  eligendi vero ad?
+                  em breve
                 </p>
                 <p className="mb-4 text-center text-base font-normal text-gray-800 sm:text-lg md:text-xl lg:text-xl">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Repudiandae sequi odit aliquid autem provident corrupti
-                  nostrum corporis excepturi molestias nobis, necessitatibus,
-                  illo est tenetur, explicabo dolor veniam! Consequatur,
-                  nesciunt autem.
+                em breve 
                 </p>
                 <p className="text-center text-base font-normal text-gray-800 sm:text-lg md:text-xl lg:text-xl">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut,
-                  assumenda! Voluptate odit distinctio culpa dolore totam
-                  dignissimos quos, facilis perferendis, numquam itaque ab
-                  pariatur amet iste dolor a aspernatur tenetur.
+                em breve
                 </p>
                 <div className="flex lg:text-5xl lg:tracking-wide"></div>
               </div>
-            </div>
+            </div> */}
             <div className="sm:flex:row flex w-full flex-col-reverse items-center justify-between p-1 md:flex-row lg:flex-row">
               <div className="flex flex-1 flex-col items-center lg:text-5xl lg:tracking-wide">
                 <h2 className="mb-4 mt-10 text-base font-bold sm:text-lg lg:text-xl">
                   BEBIDAS REGIONAIS
                 </h2>
                 <p className="text-center text-base font-normal text-gray-800 sm:text-lg md:text-xl lg:text-xl">
-                  Aqui você encontrará uma variedade de bebidas regionais do
-                  Pará, incluindo a tradicional cachaça de jambu. Além disso,
-                  oferecemos diversos produtos populares no mercado, como
-                  cervejas, vinhos e muito mais.
+                  Oferecemos uma ampla seleção de produtos populares, incluindo
+                  cervejas, vinhos e muito mais. Para ajudar você a escolher o
+                  destilado ideal, disponibilizamos degustações, garantindo que
+                  você encontre exatamente o que procura e saia satisfeito com
+                  sua escolha.
                 </p>
               </div>
 
@@ -114,10 +101,10 @@ export default function Home() {
                   </div>
                   <div className="mb-4 mt-4 w-[280px] flex-col items-center justify-center text-center text-gray-800 lg:w-[350px]">
                     <p className="text-base sm:text-lg md:text-xl lg:text-xl">
-                      Além disso, oferecemos diversos produtos populares no
-                      mercado, como cervejas, vinhos e muito mais. Além disso,
-                      oferecemos diversos produtos populares no mercado, como
-                      cervejas, vinhos e muito mais.
+                      Além disso, oferecemos uma seleção premium de destilados e
+                      vinhos exclusivos. Nossa oferta inclui rótulos
+                      sofisticados e edições limitadas, cuidadosamente
+                      escolhidos para proporcionar uma experiência única. 
                     </p>
                   </div>
                 </div>
@@ -180,11 +167,8 @@ export default function Home() {
                     <p className="mb-4 mt-4 text-base text-gray-800 sm:text-lg md:text-xl lg:text-xl">
                       Horário de funcionamento:
                       <br />
-                      Segunda a Sexta: 12h - 15h / 17h - 22h
+                      Segunda a Domingo: 09h - 13h / 15h - 00h
                       <br />
-                      Sábado: 12h - 22h
-                      <br />
-                      Domingo: 12h - 21h30
                     </p>
                   </div>
                 </div>

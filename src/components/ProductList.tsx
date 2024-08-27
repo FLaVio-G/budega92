@@ -58,7 +58,7 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
           <div className="mb-2 mt-2">
             <h2 className="xs:text-sm text-xs font-bold">{product.name}</h2>
           </div>
-          <p className="text-xs font-semibold">R$ {product.price}</p>
+          {/* <p className="text-xs font-semibold">R$ {product.price}</p> */}
         </div>
       </Dialog.Trigger>
       <Dialog.Portal>
@@ -98,7 +98,7 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
               <div className="sm:tex flex h-auto flex-col items-center gap-4 text-start sm:h-24 lg:h-24 lg:text-center">
                 <h2 className="text-2xl font-bold">{product.name}</h2>
                 {product.description}
-                <p className="text-lg font-semibold">R$ {product.price}</p>
+                {/* <p className="text-lg font-semibold">R$ {product.price}</p> */}
               </div>
 
               <div className="flex flex-row gap-2 sm:mt-16 lg:mt-14">

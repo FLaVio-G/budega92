@@ -71,7 +71,7 @@ export default function Header() {
                 priority
               />
               <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-0">
-                <Image
+                {/* <Image
                   className="h-[120px] w-[120px] lg:h-[300px] lg:w-[300px]"
                   alt="logo budega 92"
                   src={budega92}
@@ -81,7 +81,7 @@ export default function Header() {
                     width: "35%",
                     height: "auto",
                   }}
-                />
+                /> */}
               </div>
             </CarouselItem>
             <CarouselItem className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[800px]">

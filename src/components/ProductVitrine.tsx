@@ -30,7 +30,7 @@ export default function ProductVitrine() {
                     <Image
                       width={1000}
                       height={1000}
-                      src={product.image[0].url}
+                      src={product.image[0]?.url}
                       alt={product.name}
                       className="h-[250px] w-[200px] lg:h-[250px] lg:w-[250px]"
                       style={{
