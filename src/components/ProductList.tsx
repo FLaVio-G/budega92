@@ -58,7 +58,6 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
           <div className="mb-2 mt-2">
             <h2 className="xs:text-sm text-xs font-bold">{product.name}</h2>
           </div>
-          {/* <p className="text-xs font-semibold">R$ {product.price}</p> */}
         </div>
       </Dialog.Trigger>
       <Dialog.Portal>
@@ -98,7 +97,6 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
               <div className="sm:tex flex h-auto flex-col items-center gap-4 text-start sm:h-24 lg:h-24 lg:text-center">
                 <h2 className="text-2xl font-bold">{product.name}</h2>
                 {product.description}
-                {/* <p className="text-lg font-semibold">R$ {product.price}</p> */}
               </div>
 
               <div className="flex flex-row gap-2 sm:mt-16 lg:mt-14">
@@ -120,7 +118,7 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
 
 const ProductList: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(6);
+  const [itemsPerPage] = useState(8);
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleNextPage = useCallback(() => {
@@ -145,7 +143,7 @@ const ProductList: React.FC = () => {
           return data?.products.filter((product) =>
             product.name.toLowerCase().includes(searchTerm.toLowerCase()),
           );
-        }, [data, searchTerm]);
+        }, [data?.products, searchTerm]);
 
         if (loading) return <p>Loading...</p>;
         if (error) return <p>Error: {error.message}</p>;
@@ -174,8 +172,9 @@ const ProductList: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-4 flex h-auto max-w-7xl flex-col items-center justify-center bg-customBeigeTwo text-gray-800 md:w-[780px] lg:h-[780px] lg:w-[1100px]">
-              <div className="grid h-full w-full grid-cols-2 items-center justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
+            {/* Contêiner com rolagem para os produtos */}
+            <div className="mt-4 flex h-[550px] max-w-7xl flex-col items-center justify-center bg-customBeigeTwo text-gray-800 md:w-[780px] lg:h-[780px] lg:w-[1100px]">
+              <div className="grid h-[500px] w-full grid-cols-2 items-center justify-items-center gap-4 overflow-y-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
                 {filteredProducts?.map((product) => (
                   <CardProduct key={product.id} product={product} />
                 ))}

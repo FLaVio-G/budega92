@@ -24,7 +24,7 @@ export default function Home() {
             className="flex h-auto w-full flex-col items-center justify-center rounded-lg"
           >
             <div className="mx-4 w-full items-center justify-center sm:mx-4 sm:p-4 md:mx-8 md:p-8 lg:mx-0 lg:w-[850px] lg:p-10">
-              <div className="flex flex-col items-center justify-center">
+              <div className="mb-4 flex flex-col items-center justify-center">
                 <h1 className="mb-4 flex items-center justify-center text-lg font-extrabold text-gray-800 sm:text-xl lg:justify-start lg:text-lg">
                   NOSSA HISTÓRIA
                 </h1>
@@ -44,13 +44,11 @@ export default function Home() {
                   exclusivas, com um atendimento personalizado e produtos que
                   não se encontram em nenhum outro lugar da região.
                 </p>
-
-                <div className="flex lg:text-5xl lg:tracking-wide"></div>
               </div>
             </div>
-            <div className="sm:flex:row m-0 flex w-full flex-col-reverse items-center justify-between p-0 md:flex-row lg:flex-row">
+            <div className="sm:flex:row m-0 mb-4 flex w-full flex-col-reverse items-center justify-between p-0 md:flex-row lg:mb-0 lg:flex-row">
               <div className="flex flex-1 flex-col items-center lg:text-5xl lg:tracking-wide">
-                <h2 className="mb-4 mt-10 text-base font-bold sm:text-lg lg:text-xl">
+                <h2 className="mb-4 text-base font-bold sm:text-lg lg:mt-10 lg:text-xl">
                   BEBIDAS REGIONAIS
                 </h2>
                 <p className="text-center text-base font-normal text-gray-800 sm:text-lg md:text-xl lg:text-xl">
@@ -62,7 +60,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="h-80 w-full flex-1 items-center justify-end overflow-hidden lg:sm:md:flex">
+              <div className="w-full flex-1 items-center justify-end overflow-hidden lg:h-80 lg:sm:md:flex">
                 <Image
                   src={budegaSecond}
                   alt="Descrição da imagem"
@@ -79,7 +77,7 @@ export default function Home() {
             </div>
 
             <div className="flex w-full flex-col lg:flex-row lg:justify-between">
-              <div className="flex h-[300px] w-full items-center overflow-hidden sm:h-[400px] md:h-[600px] lg:h-[800px] lg:w-full">
+              <div className="flex h-[200px] w-full items-center overflow-hidden sm:h-[400px] md:h-[600px] lg:h-[800px] lg:w-full">
                 <Image
                   src={budegaThree}
                   alt="Descrição da imagem"
@@ -89,8 +87,8 @@ export default function Home() {
                     width: "100%",
                     height: "auto",
                   }}
-                  width={1200}
-                  height={1500}
+                  width={800}
+                  height={300}
                 />
               </div>
               <div
@@ -98,12 +96,12 @@ export default function Home() {
                 className="flex h-full w-full flex-col lg:mx-0 lg:my-0 lg:h-[800px] lg:w-[800px] lg:text-5xl"
               >
                 <div className="lg:full flex flex-col items-center justify-center lg:mx-0 lg:my-0 lg:w-full">
-                  <div className="mb-4 mt-10 flex flex-col items-center justify-center">
+                  <div className="mb-4 flex flex-col items-center justify-center lg:mt-10">
                     <h2 className="text-base font-bold sm:text-lg lg:text-xl">
                       MENU DE PRODUTOS
                     </h2>
                   </div>
-                  <div className="mb-4 mt-6 flex w-[280px] flex-col items-center justify-center text-center lg:w-[350px]">
+                  <div className="mb-4 flex w-[280px] flex-col items-center justify-center text-center lg:mt-6 lg:w-[350px]">
                     <p className="text-base sm:text-lg md:text-xl lg:text-xl">
                       Aqui você encontrará uma variedade de bebidas regionais do
                       Pará, incluindo a tradicional cachaça de jambu.
