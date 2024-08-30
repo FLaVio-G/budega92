@@ -11,7 +11,9 @@ import {
 } from "@/components/ui/carousel";
 
 import barOne from "../../public/images/barOne.jpg";
-import budega92 from "../../public/images/budega-v1.svg";
+import budega92 from "../../public/images/barril.png";
+import budegaInitial from "../../public/images/IMG_5192.jpg";
+
 import Image from "next/image";
 
 interface NavLinkProps {
@@ -59,11 +61,11 @@ export default function Header() {
           <CarouselContent className="relative h-auto lg:h-[800px] lg:w-auto">
             <CarouselItem className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[800px]">
               <Image
-                src={barOne}
+                src={budegaInitial}
                 alt={"foto de bar"}
                 className="object-cover brightness-50"
                 style={{
-                  objectFit: "cover",
+                  objectFit: "fill",
                   objectPosition: "center",
                   width: "100%",
                   height: "auto",
@@ -71,17 +73,17 @@ export default function Header() {
                 priority
               />
               <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-0">
-                {/* <Image
+                <Image
                   className="h-[120px] w-[120px] lg:h-[300px] lg:w-[300px]"
                   alt="logo budega 92"
                   src={budega92}
                   style={{
                     objectFit: "cover",
                     objectPosition: "center",
-                    width: "35%",
+                    width: "15%",
                     height: "auto",
                   }}
-                /> */}
+                />
               </div>
             </CarouselItem>
             <CarouselItem className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[800px]">

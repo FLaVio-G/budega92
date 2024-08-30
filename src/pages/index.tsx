@@ -10,6 +10,8 @@ import * as Dialog from "@radix-ui/react-dialog";
 import ProductList from "@/components/ProductList";
 import ProductVitrine from "@/components/ProductVitrine";
 import SimpleMap from "@/components/GoogleMap";
+import budegaThree from "../../public/images/IMG_1942.jpg";
+import budegaSecond from "../../public/images/IMG_5206 (1).jpg";
 
 export default function Home() {
   return (
@@ -21,24 +23,32 @@ export default function Home() {
             id="sobre"
             className="flex h-auto w-full flex-col items-center justify-center rounded-lg"
           >
-            {/* <div className="mx-4 w-full items-center justify-center sm:mx-4 sm:p-4 md:mx-8 md:p-8 lg:mx-0 lg:w-[850px] lg:p-10">
+            <div className="mx-4 w-full items-center justify-center sm:mx-4 sm:p-4 md:mx-8 md:p-8 lg:mx-0 lg:w-[850px] lg:p-10">
               <div className="flex flex-col items-center justify-center">
                 <h1 className="mb-4 flex items-center justify-center text-lg font-extrabold text-gray-800 sm:text-xl lg:justify-start lg:text-lg">
                   NOSSA HISTÓRIA
                 </h1>
                 <p className="mb-4 text-center text-base font-normal text-gray-800 sm:text-lg md:text-xl lg:text-xl">
-                  em breve
+                  A Budega 92 nasceu em Santarém com o objetivo de oferecer uma
+                  seleção exclusiva de bebidas para todos os gostos. Nossa
+                  paixão por vinhos, destilados e cervejas artesanais nos levou
+                  a criar um espaço único, onde cada garrafa conta uma história.
                 </p>
                 <p className="mb-4 text-center text-base font-normal text-gray-800 sm:text-lg md:text-xl lg:text-xl">
-                em breve 
+                  Valorizamos a qualidade e a autenticidade, trabalhando
+                  diretamente com produtores locais e internacionais para trazer
+                  aos nossos clientes os rótulos mais especiais e autênticos.
                 </p>
                 <p className="text-center text-base font-normal text-gray-800 sm:text-lg md:text-xl lg:text-xl">
-                em breve
+                  Visite a Budega 92 e descubra uma nova experiência em bebidas
+                  exclusivas, com um atendimento personalizado e produtos que
+                  não se encontram em nenhum outro lugar da região.
                 </p>
+
                 <div className="flex lg:text-5xl lg:tracking-wide"></div>
               </div>
-            </div> */}
-            <div className="sm:flex:row flex w-full flex-col-reverse items-center justify-between p-1 md:flex-row lg:flex-row">
+            </div>
+            <div className="sm:flex:row m-0 flex w-full flex-col-reverse items-center justify-between p-0 md:flex-row lg:flex-row">
               <div className="flex flex-1 flex-col items-center lg:text-5xl lg:tracking-wide">
                 <h2 className="mb-4 mt-10 text-base font-bold sm:text-lg lg:text-xl">
                   BEBIDAS REGIONAIS
@@ -54,7 +64,7 @@ export default function Home() {
 
               <div className="h-80 w-full flex-1 items-center justify-end overflow-hidden lg:sm:md:flex">
                 <Image
-                  src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
+                  src={budegaSecond}
                   alt="Descrição da imagem"
                   style={{
                     objectFit: "cover",
@@ -71,16 +81,16 @@ export default function Home() {
             <div className="flex w-full flex-col lg:flex-row lg:justify-between">
               <div className="flex h-[300px] w-full items-center overflow-hidden sm:h-[400px] md:h-[600px] lg:h-[800px] lg:w-full">
                 <Image
-                  src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
+                  src={budegaThree}
                   alt="Descrição da imagem"
                   style={{
-                    objectFit: "cover",
-                    objectPosition: "center",
+                    objectFit: "fill",
+                    objectPosition: "top",
                     width: "100%",
                     height: "auto",
                   }}
                   width={1200}
-                  height={800}
+                  height={1500}
                 />
               </div>
               <div
@@ -99,12 +109,12 @@ export default function Home() {
                       Pará, incluindo a tradicional cachaça de jambu.
                     </p>
                   </div>
-                  <div className="mb-4 mt-4 w-[280px] flex-col items-center justify-center text-center text-gray-800 lg:w-[350px]">
+                  <div className="mb-4 w-[280px] flex-col items-center justify-center text-center text-gray-800 lg:w-[350px]">
                     <p className="text-base sm:text-lg md:text-xl lg:text-xl">
                       Além disso, oferecemos uma seleção premium de destilados e
                       vinhos exclusivos. Nossa oferta inclui rótulos
                       sofisticados e edições limitadas, cuidadosamente
-                      escolhidos para proporcionar uma experiência única. 
+                      escolhidos para proporcionar uma experiência única.
                     </p>
                   </div>
                 </div>
@@ -151,7 +161,7 @@ export default function Home() {
             </div>
             <div
               id="map-view"
-              className="flex w-full flex-col items-center justify-between lg:mt-2 lg:flex-row"
+              className="flex w-full flex-col items-center justify-between lg:mt-0 lg:flex-row"
             >
               <div className="mt-10 flex flex-1 flex-col items-center lg:mt-0 lg:tracking-wide">
                 <div className="mx-4 flex flex-col items-center sm:mx-8 md:mx-16 lg:mx-44">
