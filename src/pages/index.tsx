@@ -67,10 +67,7 @@ export default function Home() {
                   width={3840}
                   height={2160}
                   priority
-                  style={{
-                    objectFit: "cover", 
-                    objectPosition: "center",
-                  }}
+                  className="rotate-180"
                 />
               </div>
             </div>
