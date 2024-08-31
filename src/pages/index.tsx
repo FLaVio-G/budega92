@@ -87,8 +87,7 @@ export default function Home() {
                     width: "100%",
                     height: "auto",
                   }}
-                  width={800}
-                  height={300}
+                  priority
                 />
               </div>
               <div
