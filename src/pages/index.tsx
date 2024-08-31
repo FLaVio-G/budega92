@@ -11,7 +11,7 @@ import ProductList from "@/components/ProductList";
 import ProductVitrine from "@/components/ProductVitrine";
 import SimpleMap from "@/components/GoogleMap";
 import budegaThree from "../../public/images/IMG_1942.jpg";
-import budegaSecond from "../../public/images/IMG_5206 (1).jpg";
+import budegaSecond  from '../../public/images/IMG_5206.jpg'
 
 export default function Home() {
   return (
