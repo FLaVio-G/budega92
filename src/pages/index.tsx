@@ -66,7 +66,6 @@ export default function Home() {
                   alt="Fotos de bebidas"
                   style={{
                     objectFit: "fill",
-                    objectPosition: "center",
                     width: "100%",
                     height: "auto",
                   }}
