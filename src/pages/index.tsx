@@ -63,15 +63,14 @@ export default function Home() {
               <div className="w-full flex-1 items-center justify-end overflow-hidden lg:h-80 lg:sm:md:flex">
                 <Image
                   src={budegaSecond}
-                  alt="Descrição da imagem"
+                  alt="Fotos de bebidas"
                   style={{
-                    objectFit: "cover",
+                    objectFit: "fill",
                     objectPosition: "center",
                     width: "100%",
                     height: "auto",
                   }}
-                  width={400}
-                  height={500}
+                  priority
                 />
               </div>
             </div>
