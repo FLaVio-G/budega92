@@ -70,7 +70,7 @@ export default function Home() {
                     width: "100%",
                     height: "auto",
                   }}
-                  width={800}
+                  width={400}
                   height={500}
                 />
               </div>
