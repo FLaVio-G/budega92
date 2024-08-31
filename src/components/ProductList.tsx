@@ -162,7 +162,7 @@ const ProductList: React.FC = () => {
 
         return (
           <>
-            <div className="mx-8 flex w-full flex-col items-center justify-center">
+            <div className="mx-8 mt-4 flex w-full flex-col items-center justify-center">
               <div className="flex w-full flex-col items-center justify-center">
                 <div className="mt-4 flex flex-col items-center justify-center">
                   <h1 className="text-center text-4xl font-semibold lg:text-6xl">
@@ -184,13 +184,13 @@ const ProductList: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-4 flex h-[550px] max-w-7xl flex-col items-center justify-center bg-customBeigeTwo text-gray-800 md:w-[780px] lg:h-[780px] lg:w-[1100px]">
+            <div className="mt-4 flex h-[500px] max-w-7xl flex-col items-center justify-center bg-customBeigeTwo text-gray-800 md:w-[780px] lg:h-[780px] lg:w-[1100px]">
               <div className="grid h-[500px] w-full grid-cols-2 items-center justify-items-center gap-4 overflow-y-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
                 {filteredProducts?.map((product) => (
                   <CardProduct key={product.id} product={product} />
                 ))}
               </div>
-              <Pagination className="p-2">
+              <Pagination className="mb-4 mt-4">
                 <PaginationContent>
                   <PaginationItem>
                     <PaginationPrevious onClick={handlePreviousPage} />
