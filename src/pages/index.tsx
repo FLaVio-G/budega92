@@ -11,7 +11,7 @@ import ProductList from "@/components/ProductList";
 import ProductVitrine from "@/components/ProductVitrine";
 import SimpleMap from "@/components/GoogleMap";
 import budegaThree from "../../public/images/IMG_1942.jpg";
-import budegaSecond  from '../../public/images/IMG_5206.jpg'
+import budegaSecond from '../../public/images/IMG_5206.jpg'
 
 export default function Home() {
   return (
@@ -64,11 +64,8 @@ export default function Home() {
                 <Image
                   src={budegaSecond}
                   alt="Fotos de bebidas"
-                  style={{
-                    objectFit: "fill",
-                    width: "100%",
-                    height: "auto",
-                  }}
+                  width={3840}
+                  height={2160}
                   priority
                 />
               </div>
