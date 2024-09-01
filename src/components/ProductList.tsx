@@ -66,12 +66,8 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
           aria-labelledby={`dialog-title-${product.id}`}
           aria-describedby={`dialog-description-${product.id}`}
         >
-
           <div className="relative flex h-full max-w-[860px] flex-col items-center justify-center bg-customBeigeTwo p-6 lg:h-[560px]">
-            <Dialog.Title
-
-              className="mb-4 hidden text-2xl font-bold"
-            >
+            <Dialog.Title className="mb-4 hidden text-2xl font-bold">
               {product.name}
             </Dialog.Title>
 
@@ -82,13 +78,10 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
             <Image
               src={product.image[0]?.url}
               alt={`${product.name} image`}
-              width={300}
-              height={300}
-              style={{
-                objectFit: "contain",
-                objectPosition: "center",
-              }}
-              className="h-[250px] w-[300px] object-contain"
+              width={250}
+              height={250}
+              style={{ objectFit: "contain" }}
+              className="h-[250px] w-[250px] lg:h-[350px] lg:w-[350px]"
             />
 
             <div className="mt-4 flex flex-col items-center justify-center text-center">
@@ -97,33 +90,30 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
                 <p>{product.description}</p>
               </div>
 
-              <div className="mt-4 flex flex-row gap-2">
+              <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-start">
                 <a
                   href="#"
-                  className="inline-block border-2 border-solid border-black px-4 py-2 text-black transition-colors hover:bg-black hover:text-white"
+                  className="inline-block w-full border-2 border-solid border-black px-6 py-3 text-center text-black transition-colors hover:bg-black hover:text-white sm:w-auto"
                 >
                   Clique aqui para ver o vídeo
                 </a>
 
                 <a
                   href="#"
-                  className="inline-block border-2 border-solid border-black px-4 py-2 text-black transition-colors hover:bg-black hover:text-white"
+                  className="inline-block w-full border-2 border-solid border-black px-6 py-3 text-center text-black transition-colors hover:bg-black hover:text-white sm:w-auto"
                 >
                   Clique aqui para pedir pelo Whatsapp
                 </a>
               </div>
             </div>
             <Dialog.Close asChild>
-            <button className="absolute right-2 top-2 h-8 w-8 p-2 text-3xl hover:text-red-500">
-              <X />
-            </button>
-          </Dialog.Close>
+              <button className="absolute right-2 top-2 h-8 w-8 p-2 text-3xl hover:text-red-500">
+                <X />
+              </button>
+            </Dialog.Close>
           </div>
-       
         </Dialog.Content>
       </Dialog.Portal>
-
-
     </Dialog.Root>
   );
 };
