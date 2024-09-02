@@ -95,12 +95,14 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
                   href="#"
                   className="inline-block w-full border-2 border-solid border-black px-6 py-3 text-center text-black transition-colors hover:bg-black hover:text-white sm:w-auto"
                 >
-                  Clique aqui para ver o vídeo
+                  Em breve videos sobre as bebidas
                 </a>
 
                 <a
-                  href="#"
+                  href="https://wa.me/5593991391314"
                   className="inline-block w-full border-2 border-solid border-black px-6 py-3 text-center text-black transition-colors hover:bg-black hover:text-white sm:w-auto"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Clique aqui para pedir pelo Whatsapp
                 </a>
