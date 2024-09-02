@@ -8,7 +8,6 @@ export default function Document() {
           name="description"
           content="Descubra o melhor bar da região, especializado em bebidas locais e artesanais. Venha experimentar uma seleção exclusiva de bebidas regionais, desde cervejas e vinhos até destilados únicos. Conheça o ambiente acolhedor e os sabores autênticos da nossa região."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
           name="apple-mobile-web-app-status-bar-style"

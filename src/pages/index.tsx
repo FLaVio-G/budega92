@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 
 import Image from "next/image";
 
@@ -11,11 +12,15 @@ import ProductList from "@/components/ProductList";
 import ProductVitrine from "@/components/ProductVitrine";
 import SimpleMap from "@/components/GoogleMap";
 import budegaThree from "../../public/images/IMG_1942.jpg";
-import budegaSecond from '../../public/images/IMG_5206.jpg'
+import budegaSecond from "../../public/images/IMG_5206.jpg";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title> Budega 92 - A melhor de Santarém {":)"} </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <div id="inicio" className="flex w-full flex-col">
         <Header />
         <main className="flex w-full items-center justify-center sm:mt-4 md:mt-4 lg:mt-[700px]">
