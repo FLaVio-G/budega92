@@ -71,6 +71,8 @@ export default function Header() {
                   height: "auto",
                 }}
                 priority
+                placeholder="blur"
+                blurDataURL="/path/to/low-res-image"
               />
               <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-0">
                 <Image
@@ -81,60 +83,6 @@ export default function Header() {
                     objectFit: "cover",
                     objectPosition: "center",
                     width: "15%",
-                    height: "auto",
-                  }}
-                />
-              </div>
-            </CarouselItem>
-            <CarouselItem className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[800px]">
-              <Image
-                src={barOne}
-                alt={"foto de bar"}
-                className="object-cover brightness-50"
-                style={{
-                  objectFit: "cover",
-                  objectPosition: "center",
-                  width: "100%",
-                  height: "auto",
-                }}
-                priority
-              />
-              <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-0">
-                <Image
-                  className="h-[120px] w-[120px] lg:h-[300px] lg:w-[300px]"
-                  alt="logo budega 92"
-                  src={budega92}
-                  style={{
-                    objectFit: "cover",
-                    objectPosition: "center",
-                    width: "35%",
-                    height: "auto",
-                  }}
-                />
-              </div>
-            </CarouselItem>
-            <CarouselItem className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[800px]">
-              <Image
-                src={barOne}
-                alt={"foto de bar"}
-                className="object-cover brightness-50"
-                style={{
-                  objectFit: "cover",
-                  objectPosition: "center",
-                  width: "100%",
-                  height: "auto",
-                }}
-                priority
-              />
-              <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-0">
-                <Image
-                  className="h-[120px] w-[120px] lg:h-[300px] lg:w-[300px]"
-                  alt="logo budega 92"
-                  src={budega92}
-                  style={{
-                    objectFit: "cover",
-                    objectPosition: "center",
-                    width: "35%",
                     height: "auto",
                   }}
                 />
